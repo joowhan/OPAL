@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:opalapp/screens/first.dart';
-import 'package:opalapp/screens/second.dart';
+import 'package:opalapp/screens/AccountInfo.dart';
+import 'package:opalapp/screens/AccountInfo.dart';
+import 'package:opalapp/screens/Recommend.dart';
 import 'package:opalapp/screens/home.dart';
+import 'package:opalapp/screens/list.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
-  final List<Widget> _children = [ First(),Home(), Second()];
+  final List<Widget> _children = [ Account(),Home(), fitnessList()];
   void _onTap(int index) {
     setState(() {
       _currentIndex = index;

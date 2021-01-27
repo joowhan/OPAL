@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:opalapp/screens/first.dart';
-import 'list.dart';
+import 'package:opalapp/screens/AccountInfo.dart';
+import 'MyFitness.dart';
 import 'package:flutter/painting.dart';
 
 class Home extends StatefulWidget {
@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => SecondRoute()));
+                      CupertinoPageRoute(builder: (context) => myFitness()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
@@ -70,14 +70,14 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => SecondRoute()));
+                      CupertinoPageRoute(builder: (context) => myFitness()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
                 color: Colors.brown[600],
                 splashColor: Colors.red,
                 textColor: Colors.white,
-                label: Text('추천 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
+                label: Text('내 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
                 icon: Icon(Icons.fitness_center_rounded, size: 55, color: Colors.white),
               ),
             ),

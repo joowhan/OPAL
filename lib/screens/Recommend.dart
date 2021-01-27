@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
-class fitnessList extends StatelessWidget {
+class Recommendation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+
+    );
   }
 }
