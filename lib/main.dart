@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
-  final List<Widget> _children = [Home(), First(), Second()];
+  final List<Widget> _children = [ First(),Home(), Second()];
   void _onTap(int index) {
     setState(() {
       _currentIndex = index;
@@ -63,6 +63,11 @@ class _MyHomePageState extends State<MyHomePage> {
             currentIndex: _currentIndex,
             items: [
               new BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_outlined),
+                // ignore: deprecated_member_use
+                title: Text('Account'),
+                ),
+              new BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 //label:'Home',
                 // ignore: deprecated_member_use
@@ -72,11 +77,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icon(Icons.accessibility_new),
                 // ignore: deprecated_member_use
                 title: Text('Start Training'),
-              ),
-              new BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined),
-                // ignore: deprecated_member_use
-                title: Text('Account'),
               )
             ]));
   }
