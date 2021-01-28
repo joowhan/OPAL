@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:opalapp/screens/AccountInfo.dart';
+import 'package:opalapp/screens/Recommend.dart';
 import 'MyFitness.dart';
 import 'package:flutter/painting.dart';
 
@@ -38,7 +39,7 @@ class _HomeState extends State<Home> {
             Container(
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom)*0.2,
+                  MediaQuery.of(context).padding.bottom)*0.258,
               width: 400,
               child:
               RaisedButton.icon(
@@ -46,7 +47,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => myFitness()));
+                      CupertinoPageRoute(builder: (context) => Recommendation()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
@@ -66,7 +67,7 @@ class _HomeState extends State<Home> {
             Container(
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom)*0.2,
+                  MediaQuery.of(context).padding.bottom)*0.258,
               width: 400,
               child:
               RaisedButton.icon(
@@ -112,13 +113,13 @@ class _HomeState extends State<Home> {
                   style: TextStyle(fontSize: 50, color: Colors.blue[800], fontWeight: FontWeight.w900),
                 )),
             titleSection,*/
-            Text(
+            /*Text(
                 '운동을 선택해주세요!',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: (
                     MediaQuery.of(context).size.height -
                     MediaQuery.of(context).padding.top -
                     MediaQuery.of(context).padding.bottom)*0.06)
-            ),
+            ),*/
             Padding(padding: EdgeInsets.all(20.0)),
             buttonSection,
 
