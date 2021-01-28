@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   final List<Widget> _children = [ Account(),Home(), fitnessList()];
   void _onTap(int index) {
@@ -42,12 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        /*
+
         appBar: AppBar(
 
           backgroundColor: Colors.white,
 
-          title: Text('운동시작',
+          title: Text('OPAL 운동',
 
               style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color:Colors.black,
               )
           )
-        ),*/
+        ),
         body:
         _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(

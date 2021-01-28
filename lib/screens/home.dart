@@ -36,7 +36,9 @@ class _HomeState extends State<Home> {
         Column(
           children: <Widget>[
             Container(
-              height:200,
+              height:(MediaQuery.of(context).size.height -
+                  MediaQuery.of(context).padding.top -
+                  MediaQuery.of(context).padding.bottom)*0.2,
               width: 400,
               child:
               RaisedButton.icon(
@@ -62,7 +64,9 @@ class _HomeState extends State<Home> {
         Column(
           children: <Widget>[
             Container(
-              height:200,
+              height:(MediaQuery.of(context).size.height -
+                  MediaQuery.of(context).padding.top -
+                  MediaQuery.of(context).padding.bottom)*0.2,
               width: 400,
               child:
               RaisedButton.icon(
@@ -94,8 +98,6 @@ class _HomeState extends State<Home> {
       ],
     );
 
-
-
     return Scaffold(
       body: Center(
         child:
@@ -103,16 +105,19 @@ class _HomeState extends State<Home> {
 
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
+            /*Padding(
                 padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
                 child: Text(
                   "운동 시작 ",
                   style: TextStyle(fontSize: 50, color: Colors.blue[800], fontWeight: FontWeight.w900),
                 )),
-            titleSection,
+            titleSection,*/
             Text(
                 '운동을 선택해주세요!',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 45)
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: (
+                    MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).padding.top -
+                    MediaQuery.of(context).padding.bottom)*0.06)
             ),
             Padding(padding: EdgeInsets.all(20.0)),
             buttonSection,
