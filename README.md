@@ -1,16 +1,12 @@
-# opalapp
+# OPAL
 
-A new Flutter application.
+장애인 & 노인 홈 트레이닝 어플
 
-## Getting Started
+## PART
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+정주영 : 문제상황분석
+김주환 : 개요, 간트차트 
+전소명 : prototype 별 기능 설명 
+```
+---
