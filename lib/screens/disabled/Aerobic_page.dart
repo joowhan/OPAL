@@ -6,6 +6,7 @@ import 'package:video_player/video_player.dart';
 import 'dart:async';
 
 import 'Aerobic.dart';
+import 'Aerobic_D_Goodjob.dart';
 
 class aerobic_page extends StatefulWidget {
   @override
@@ -211,7 +212,7 @@ class LastScreen extends StatelessWidget {
             Navigator.push(
               //push를 눌렀을 때 edit로 넘어가
                 context,
-                CupertinoPageRoute(builder: (context) => MyHomePage()));
+                CupertinoPageRoute(builder: (context) => ADgoodjob()));
           },
         ),
       ),

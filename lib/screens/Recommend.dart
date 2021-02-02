@@ -63,7 +63,7 @@ class _RecommendationState extends State<Recommendation> {
                   Navigator.push(
                       //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => ADgoodjob()));
+                      CupertinoPageRoute(builder: (context) => aerobic()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
