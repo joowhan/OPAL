@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:opalapp/screens/disabled/Aerobic.dart';
 import 'dart:convert';
+import 'disabled/Aerobic_D_Goodjob.dart';
 import 'home.dart';
 
 class Recommendation extends StatefulWidget {
@@ -62,7 +63,7 @@ class _RecommendationState extends State<Recommendation> {
                   Navigator.push(
                       //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => aerobic()));
+                      CupertinoPageRoute(builder: (context) => ADgoodjob()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
