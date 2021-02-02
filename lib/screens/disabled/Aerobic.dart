@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Aerobic_exercise.dart';
+import 'Aerobic_updown.dart';
+import 'Aerobic_page.dart';
 
 class aerobic extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _aerobicState extends State<aerobic> {
                   Navigator.push(
                     //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => aerobic_exercise()));
+                      CupertinoPageRoute(builder: (context) => aerobic_page()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(100.0))),
