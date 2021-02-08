@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
             Container(
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom)*0.258,
+                  MediaQuery.of(context).padding.bottom)*0.29,
               width: 400,
               child:
               RaisedButton.icon(
@@ -51,10 +51,10 @@ class _HomeState extends State<Home> {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                color: Colors.amber[800],
+                color: Colors.blue[900],
                   splashColor: Colors.red,
                 textColor: Colors.white,
-                label: Text('추천 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
+                label: Text('장애인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
                 icon: Icon(Icons.fitness_center_rounded, size: 55, color: Colors.white),
               ),
             ),
@@ -67,7 +67,7 @@ class _HomeState extends State<Home> {
             Container(
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom)*0.258,
+                  MediaQuery.of(context).padding.bottom)*0.29,
               width: 400,
               child:
               RaisedButton.icon(
@@ -79,10 +79,10 @@ class _HomeState extends State<Home> {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                color: Colors.brown[600],
+                color: Colors.indigo[900],
                 splashColor: Colors.red,
                 textColor: Colors.white,
-                label: Text('내 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
+                label: Text('노인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
                 icon: Icon(Icons.fitness_center_rounded, size: 55, color: Colors.white),
               ),
             ),

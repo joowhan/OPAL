@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.amber[800],
+            selectedItemColor: Colors.indigo[900],
             onTap: _onTap,
             currentIndex: _currentIndex,
             items: [
