@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:opalapp/screens/disabled/Aerobic.dart';
+import 'package:opalapp/screens/disabled/Flexibility.dart';
 import 'dart:convert';
 import 'disabled/Aerobic_D_Goodjob.dart';
+import 'disabled/M_strength.dart';
 import 'home.dart';
 
 class Recommendation extends StatefulWidget {
@@ -77,7 +79,7 @@ class _RecommendationState extends State<Recommendation> {
                   Navigator.push(
                       //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => aerobic()));
+                      CupertinoPageRoute(builder: (context) => Flexibility()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
@@ -106,7 +108,7 @@ class _RecommendationState extends State<Recommendation> {
                   Navigator.push(
                       //push를 눌렀을 때 edit로 넘어가
                       context,
-                      CupertinoPageRoute(builder: (context) => aerobic()));
+                      CupertinoPageRoute(builder: (context) => mstrength()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
