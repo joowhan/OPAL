@@ -403,13 +403,22 @@ class _aerobicState extends State<aerobic> {
 
 
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.blue[900],
+          title: Text('유산소 ',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
+                color: Colors.white,
+              ))),
       body: Center(
           child: ListView(
             children: <Widget>[
               Column(
                 //mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  goodjob,
+                  //goodjob,
+                  Padding(padding: EdgeInsets.all(10.0)),
                   time,
                   list1,
                   list2,
