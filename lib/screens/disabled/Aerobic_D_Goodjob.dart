@@ -9,6 +9,26 @@ import '../home.dart';
 class ADgoodjob extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    var star = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+              Image.asset(
+                  'images/stars.png',
+                width: 400,
+                height: 130,
+                color: Colors.yellow,
+                colorBlendMode: BlendMode.colorBurn,
+
+              ),
+          ],
+        ),
+      ],
+    );
+
     var goodjob = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -87,39 +107,7 @@ class ADgoodjob extends StatelessWidget {
           ),
         ],
     );
-          var complete = Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    height: (MediaQuery.of(context).size.height -
-                        MediaQuery.of(context).padding.top) *
-                        0.1,
-                    width: 400,
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          //push를 눌렀을 때 edit로 넘어가
-                            context,
-                            CupertinoPageRoute(builder: (context) => MyHomePage()));
-                      },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                      color: Colors.indigo[900],
-                      splashColor: Colors.red,
-                      textColor: Colors.white,
-                      child: Text('완료',
-                          textAlign: TextAlign.left,
-                          style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          );
+
     return Scaffold(
       body: Center(
         child: ListView(
@@ -127,14 +115,31 @@ class ADgoodjob extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Image.asset('images/stars.png'),
+                star,
                 goodjob,
                 rst,
-                complete,
               ],
             ),
           ],
         )
+      ),
+
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(20),
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.push(
+              //push를 눌렀을 때 edit로 넘어가
+                context,
+                CupertinoPageRoute(builder: (context) => MyHomePage()));
+          },
+          color: Colors.indigo[900],
+          textColor: Colors.white,
+          child: Text('완료',
+              textAlign: TextAlign.left,
+              style:
+              TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
+        ),
       ),
     );
   }
