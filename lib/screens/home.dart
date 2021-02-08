@@ -52,10 +52,10 @@ class _HomeState extends State<Home> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
                 color: Colors.blue[900],
-                  splashColor: Colors.red,
+                  splashColor: Colors.indigo[900],
                 textColor: Colors.white,
                 label: Text('장애인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
-                icon: Icon(Icons.fitness_center_rounded, size: 55, color: Colors.white),
+                icon: Icon(Icons.fitness_center_rounded, size: 0, color: Colors.white),
               ),
             ),
 
@@ -80,10 +80,10 @@ class _HomeState extends State<Home> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
                 color: Colors.indigo[900],
-                splashColor: Colors.red,
+                splashColor: Colors.indigo[900],
                 textColor: Colors.white,
                 label: Text('노인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
-                icon: Icon(Icons.fitness_center_rounded, size: 55, color: Colors.white),
+                icon: Icon(Icons.fitness_center_rounded, size: 0, color: Colors.white),
               ),
             ),
 

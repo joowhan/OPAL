@@ -45,14 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
         appBar: AppBar(
 
-          backgroundColor: Colors.white,
+            backgroundColor: Colors.blue[900],
 
           title: Text('OPAL 운동',
 
               style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 40,
-              color:Colors.black,
+              fontSize: 35,
+              color:Colors.white,
               )
           )
         ),
