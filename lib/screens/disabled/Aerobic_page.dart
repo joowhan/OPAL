@@ -7,6 +7,7 @@ import 'dart:async';
 
 import 'Aerobic.dart';
 import 'Aerobic_D_Goodjob.dart';
+import 'Aerobic_armSwimming.dart';
 
 class aerobic_page extends StatefulWidget {
   @override
@@ -18,11 +19,12 @@ class _aerobic_pageState extends State<aerobic_page> {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Navigator',
-        initialRoute: '/bounce',
+        initialRoute: '/',
         routes: {
           '/': (context) => FirstScreen(),
-          '/bounce': (context) => SecondScreen(),
-          '/armSwiming': (context) => ThirdScreen(),
+          //'/bounce': (context) => SecondScreen(),
+          '/bounce': (context) => aerobic_armSwimmings(),
+          '/armSwimming': (context) => ThirdScreen(),
           '/pushWall': (context) => FourthScreen(),
           '/rowing': (context) => FifthScreen(),
           '/breathing': (context) => LastScreen(),
