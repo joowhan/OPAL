@@ -25,7 +25,7 @@ class _RecommendationState extends State<Recommendation> {
           children: <Widget>[
             Padding(padding: EdgeInsets.only(right: 20.0)),
             //Icon(Icons.accessible_rounded, size: 40),
-            Text('장애인 운동',
+            Text('휠체어 운동',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
           ],
         ),
@@ -132,7 +132,7 @@ class _RecommendationState extends State<Recommendation> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.blue[900],
-          title: Text('장애인 운동 ',
+          title: Text('휠체어 운동 ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 35,

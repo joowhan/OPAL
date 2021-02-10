@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
                 color: Colors.blue[900],
                   splashColor: Colors.indigo[900],
                 textColor: Colors.white,
-                label: Text('장애인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
+                label: Text('휠체어 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
                 icon: Icon(Icons.fitness_center_rounded, size: 0, color: Colors.white),
               ),
             ),
