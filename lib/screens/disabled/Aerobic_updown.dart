@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
 import 'Aerobic.dart';
+import 'package:opalapp/screens/disabled/Aerobic_page.dart';
+import 'package:opalapp/screens/disabled/Aerobic_bounce.dart';
+import 'package:cupertino_timer/cupertino_timer.dart';
 
 
 class aerobic_updown extends StatelessWidget {
@@ -51,7 +54,10 @@ class _updownState extends State<updown> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
-        title: Text('팔 위 아래로 흔들기 '),
+        title: Text('팔 위 아래로 흔들기 ',style: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.bold
+        ),),
       ),
       // VideoPlayerController가 초기화를 진행하는 동안 로딩 스피너를 보여주기 위해
       // FutureBuilder를 사용합니다.
@@ -81,47 +87,74 @@ class _updownState extends State<updown> {
               ),
 
               //buttons
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(padding: EdgeInsets.all(10.0)),
-                    Container( //
+              Column(
+                children: <Widget>[
+                  Column(
+
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(padding: EdgeInsets.all(10.0)),
+                      Container( // 뒤로가기. 이 경우 리스트 화면을 간다.
                         child:
                         RaisedButton.icon(
                           onPressed: () {
                             Navigator.push(
-                              //push를 눌렀을 때 edit로 넘어가
                                 context,
-                                CupertinoPageRoute(builder: (context) => aerobic()));
+                                CupertinoPageRoute(builder: (context) => aerobic())); // 다시 리스트 화면으로 이동한다.
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(40.0))),
                           color: Colors.white60,
                           splashColor: Colors.blue,
                           textColor: Colors.black45,
-                          label: Text('',
+                          label: Text('', // 글자를 추가할 경우가 있음 지우지 말것
                               style:
                               TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
                           icon: Icon(Icons.arrow_back_rounded,
                               size: 55, color: Colors.black54),
                         ),
-                    ),
-                    Padding(padding: EdgeInsets.all(10.0)),
-                    Container(
-                        child: RaisedButton.icon(
+                      ),
+                      Padding(padding: EdgeInsets.all(10.0)),
+
+                      Container( //일시정
+                          child: RaisedButton.icon(
+                            onPressed: () {
+                              // 재생/일시 중지 기능을 `setState` 호출로 감쌉니다. 이렇게 함으로써 올바른 아이콘이 보여진다.
+                              setState(() {
+                                // 영상이 재생 중이라면, 일시 중지.
+                                if (_controller.value.isPlaying) {
+                                  _controller.pause();
+                                } else {
+                                  // 만약 영상이 일시 중지 상태였다면, 재생.
+                                  _controller.play();
+                                }
+                              });
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(40.0))),
+                            color: Colors.white60,
+                            splashColor: Colors.red,
+                            textColor: Colors.black45,
+                            label: Text('',
+                                style:
+                                TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                            icon: Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                                size: 55, color: Colors.black54),
+                          )
+                      ),
+                      Padding(padding: EdgeInsets.all(10.0)),
+
+                      Container( // 완료. 다음
+                        child:
+                        RaisedButton.icon(
                           onPressed: () {
-                            // 재생/일시 중지 기능을 `setState` 호출로 감쌉니다. 이렇게 함으로써 올바른 아이콘이
-                            // 보여집니다.
-                            setState(() {
-                              // 영상이 재생 중이라면, 일시 중지 시킵니다.
-                              if (_controller.value.isPlaying) {
-                                _controller.pause();
-                              } else {
-                                // 만약 영상이 일시 중지 상태였다면, 재생합니다.
-                                _controller.play();
-                              }
-                            });
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(builder: (context) => updownRest()));
+                            //Navigator.pushNamed(context, '/first');
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(40.0))),
@@ -131,59 +164,16 @@ class _updownState extends State<updown> {
                           label: Text('',
                               style:
                               TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
-                          icon: Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                          icon: Icon(Icons.arrow_forward_rounded,
                               size: 55, color: Colors.black54),
-                        )
-                    ),
-                    Padding(padding: EdgeInsets.all(10.0)),
-                    Container(
-                      child:
-                      RaisedButton.icon(
-                        onPressed: () {
-                          Navigator.push(
-                            //push를 눌렀을 때 edit로 넘어가
-                              context,
-                              CupertinoPageRoute(builder: (context) => aerobic()));
-                        },
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                        color: Colors.white60,
-                        splashColor: Colors.red,
-                        textColor: Colors.black45,
-                        label: Text('',
-                            style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
-                        icon: Icon(Icons.arrow_forward_rounded,
-                            size: 55, color: Colors.black54),
+                        ),
                       ),
-                    ),
 
-                    Padding(padding: EdgeInsets.all(10.0)),
-                  ],
-              )
-              //buttonSection1,
-              /*FloatingActionButton(
-                onPressed: () {
-                  // 재생/일시 중지 기능을 `setState` 호출로 감쌉니다. 이렇게 함으로써 올바른 아이콘이
-                  // 보여집니다.
-                  setState(() {
-                    // 영상이 재생 중이라면, 일시 중지 시킵니다.
-                    if (_controller.value.isPlaying) {
-                      _controller.pause();
-                    } else {
-                      // 만약 영상이 일시 중지 상태였다면, 재생합니다.
-                      _controller.play();
-                    }
-                  });
-                },
-                // 플레이어의 상태에 따라 올바른 아이콘을 보여줍니다.
-                child: Icon(
-                  _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-                  size: 30,
-                ),
-              ),*/
-
-
+                      Padding(padding: EdgeInsets.all(10.0)),
+                    ],
+                  )
+                ],
+              ),
             ],
           ),
         ),
@@ -191,9 +181,66 @@ class _updownState extends State<updown> {
       );
 
       //floatingActionButtonLocation: FloatingActionButtonLocation.,
-
-      // 이 마지막 콤마는 build 메서드에 자동 서식이 잘 적용될 수 있도록 도와줍니다.
   }
 }
 
+class updownRest extends StatelessWidget {
+  var done = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+            Container(
+              margin: EdgeInsets.all(20),
+              width: 200,
+              height: 200,
+              child: CupertinoTimer(
+                duration: Duration(minutes: 1),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(20),
+              width: 200,
+              height: 200,
+              child:
+              CupertinoTimer(
+                duration: Duration(minutes: 1),
+                startOnInit: true, //무조건 시작
+                timeStyle: TextStyle(
+                    fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
+                ringColor: Colors.blue,
+                ringStroke: 10,
+              ),
+            ),
+            Container(
+              child:
+              RaisedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(builder: (context) => SecondScreen()));
+                  //Navigator.pushNamed(context, '/first');
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(40.0))),
+                color: Colors.white60,
+                splashColor: Colors.red,
+                textColor: Colors.black45,
+                label: Text('다음 운동',
+                    style:
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                icon: Icon(Icons.arrow_forward_rounded,
+                    size: 55, color: Colors.black54),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
