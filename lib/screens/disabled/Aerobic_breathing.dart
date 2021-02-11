@@ -195,7 +195,7 @@ class breathingRest extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
-            Container(
+            Container( // 디자인 비교
               margin: EdgeInsets.all(20),
               width: 200,
               height: 200,

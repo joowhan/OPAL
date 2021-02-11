@@ -199,14 +199,6 @@ class armSwimmingRest extends StatelessWidget {
               margin: EdgeInsets.all(20),
               width: 200,
               height: 200,
-              child: CupertinoTimer(
-                duration: Duration(minutes: 1),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(20),
-              width: 200,
-              height: 200,
               child:
               CupertinoTimer(
                 duration: Duration(minutes: 1),
