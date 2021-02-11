@@ -443,9 +443,11 @@ class _aerobicState extends State<aerobic> {
                    },
           color: Colors.indigo[900],
           textColor: Colors.white,
+
           child: Text('시작하기',
                      textAlign: TextAlign.left,
                     style:
+
                      TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
               ),
       ),
