@@ -17,17 +17,17 @@ class _aerobic_pageState extends State<aerobic_page> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Navigator',
-        initialRoute: '/bounce',
-        routes: {
-          '/': (context) => FirstScreen(),
-          '/bounce': (context) => SecondScreen(),
-          '/armSwiming': (context) => ThirdScreen(),
-          '/pushWall': (context) => FourthScreen(),
-          '/rowing': (context) => FifthScreen(),
-          '/breathing': (context) => LastScreen(),
-        },
-      );
+      title: 'Navigator',
+      initialRoute: '/bounce',
+      routes: {
+        '/': (context) => FirstScreen(),
+        '/bounce': (context) => SecondScreen(),
+        '/armSwiming': (context) => ThirdScreen(),
+        '/pushWall': (context) => FourthScreen(),
+        '/rowing': (context) => FifthScreen(),
+        '/breathing': (context) => LastScreen(),
+      },
+    );
   }
 }
 /*
@@ -35,11 +35,9 @@ class FirstScreen extends StatefulWidget {
   @override
   _FirstScreenState createState() => _FirstScreenState();
 }
-
 class _FirstScreenState extends State<FirstScreen> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
-
   @override
   void initState() {
     // VideoPlayerController를 저장하기 위한 변수를 만듭니다. VideoPlayerController는
@@ -47,24 +45,18 @@ class _FirstScreenState extends State<FirstScreen> {
     _controller = VideoPlayerController.network(
       'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
     );
-
     // 컨트롤러를 초기화하고 추후 사용하기 위해 Future를 변수에 할당합니다.
     _initializeVideoPlayerFuture = _controller.initialize();
-
     // 비디오를 반복 재생하기 위해 컨트롤러를 사용합니다.
     _controller.setLooping(true);
-
     super.initState();
   }
-
   @override
   void dispose() {
     // 자원을 반환하기 위해 VideoPlayerController를 dispose 시키세요.
     _controller.dispose();
-
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -219,4 +211,3 @@ class LastScreen extends StatelessWidget {
     );
   }
 }
-
