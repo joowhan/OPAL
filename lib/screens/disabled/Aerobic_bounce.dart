@@ -100,7 +100,7 @@ class _bounceState extends State<bounce> {
                       child:
                       RaisedButton.icon(
                         onPressed: () {
-                          Navigator.pop(context); 
+                          Navigator.pop(context);
                         },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(40.0))),
