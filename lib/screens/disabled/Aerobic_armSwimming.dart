@@ -194,9 +194,23 @@ class armSwimmingRest extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
             Container(
-              margin: EdgeInsets.all(20),
+                padding: EdgeInsets.only(left: 20, top: 10),
+                margin: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                        '휴 식',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70),
+                        textAlign: TextAlign.left
+                    ),
+                  ],
+                )
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, top: 50, bottom: 20),
               width: 200,
               height: 200,
               child:
