@@ -32,6 +32,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 1;
 
+  hexColor (String colorhexcode){
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+
+  }
+
   final List<Widget> _children = [ Account(),Home(), fitnessList()];
   void _onTap(int index) {
     setState(() {
@@ -45,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         appBar: AppBar(
 
-            backgroundColor: Colors.blue[900],
+            backgroundColor: Color(hexColor('#0336FF')),
 
           title: Text('OPAL 운동',
 
@@ -60,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.indigo[900],
+            selectedItemColor: Colors.indigo,
             onTap: _onTap,
             currentIndex: _currentIndex,
             items: [
