@@ -15,7 +15,16 @@ class Recommendation extends StatefulWidget {
 
 class _RecommendationState extends State<Recommendation> {
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   Widget build(BuildContext context) {
+
 
     var titleSection1 = Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -131,7 +140,7 @@ class _RecommendationState extends State<Recommendation> {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Color(hexColor('#0336FF')),
           title: Text('휠체어 운동 ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
