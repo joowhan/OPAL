@@ -26,6 +26,13 @@ class _breathingState extends State<breathing> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   void initState() {
     // VideoPlayerController를 저장하기 위한 변수를 만들고 VideoPlayerController는
     // asset, 파일, 인터넷 등의 영상들을 제어하기 위해 다양한 생성자를 제공.
@@ -38,6 +45,7 @@ class _breathingState extends State<breathing> {
 
     // 비디오를 반복 재생하기 위해 컨트롤러를 사용합니다.
     _controller.setLooping(true);
+    _controller.play();
 
     super.initState();
   }
@@ -53,13 +61,13 @@ class _breathingState extends State<breathing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue[800],
-        title: Text('숨 쉬기  ',style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold
-        ),),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.blue[800],
+      //   title: Text('유산소 ',style: TextStyle(
+      //     fontSize: 30,
+      //     fontWeight: FontWeight.bold
+      //   ),),
+      // ),
       // VideoPlayerController가 초기화를 진행하는 동안 로딩 스피너를 보여주기 위해
       // FutureBuilder를 사용합니다.
 
@@ -68,23 +76,63 @@ class _breathingState extends State<breathing> {
         child: Column(
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
-            FutureBuilder(
-              future: _initializeVideoPlayerFuture,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  // 만약 VideoPlayerController 초기화가 끝나면, 제공된 데이터를 사용하여
-                  // VideoPlayer의 종횡비를 제한하세요.
-                  return AspectRatio(
-                    aspectRatio: _controller.value.aspectRatio,
-                    // 영상을 보여주기 위해 VideoPlayer 위젯을 사용합니다.
-                    child: VideoPlayer(_controller),
-                  );
-                } else {
-                  // 만약 VideoPlayerController가 여전히 초기화 중이라면,
-                  // 로딩 스피너를 보여줍니다.
-                  return Center(child: CircularProgressIndicator());
-                }
-              },
+            Container(
+              padding: EdgeInsets.only(top:30.0),
+              height: (MediaQuery.of(context).size.height -
+                  MediaQuery.of(context).padding.top) *
+                  0.4,
+              width: 400,
+              /*decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30), //모서리를 둥글게
+                  border: Border.all(color: Colors.black12, width: 3)),*/
+              child: FutureBuilder(
+                future: _initializeVideoPlayerFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    // 만약 VideoPlayerController 초기화가 끝나면, 제공된 데이터를 사용하여
+                    // VideoPlayer의 종횡비를 제한하세요.
+                    return AspectRatio(
+                      aspectRatio: _controller.value.aspectRatio,
+                      // 영상을 보여주기 위해 VideoPlayer 위젯을 사용합니다.
+                      child: VideoPlayer(_controller),
+                    );
+                  } else {
+                    // 만약 VideoPlayerController가 여전히 초기화 중이라면,
+                    // 로딩 스피너를 보여줍니다.
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
+
+            ),
+            Container(
+                margin: const EdgeInsets.only(top: 80.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                        '숨쉬기',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        textAlign: TextAlign.left
+                    ),
+                  ],
+                )
+            ),
+
+            Container(
+                margin: const EdgeInsets.all(65.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                        '10 회',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left
+                    ),
+                  ],
+                )
             ),
 
             //buttons
@@ -94,83 +142,52 @@ class _breathingState extends State<breathing> {
 
                 ),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Padding(padding: EdgeInsets.all(10.0)),
-                    Container( // 뒤로가기. 이 경우 리스트 화면을 간다.
-                      child:
-                      RaisedButton.icon(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(builder: (context) => aerobic())); // 다시 리스트 화면으로 이동한다.
-                        },
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                        color: Colors.white60,
-                        splashColor: Colors.blue,
-                        textColor: Colors.black45,
-                        label: Text('', // 글자를 추가할 경우가 있음 지우지 말것
-                            style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-                        icon: Icon(Icons.arrow_back_rounded,
-                            size: 55, color: Colors.black54),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.all(10.0)),
-
-                    Container( //일시정
-                        child: RaisedButton.icon(
-                          onPressed: () {
-                            // 재생/일시 중지 기능을 `setState` 호출로 감쌉니다. 이렇게 함으로써 올바른 아이콘이 보여진다.
-                            setState(() {
-                              // 영상이 재생 중이라면, 일시 중지.
-                              if (_controller.value.isPlaying) {
-                                _controller.pause();
-                              } else {
-                                // 만약 영상이 일시 중지 상태였다면, 재생.
-                                _controller.play();
-                              }
-                            });
-                          },
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                          color: Colors.white60,
-                          splashColor: Colors.red,
-                          textColor: Colors.black45,
-                          label: Text('',
-                              style:
-                              TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
-                          icon: Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-                              size: 55, color: Colors.black54),
-                        )
-                    ),
-                    Padding(padding: EdgeInsets.all(10.0)),
-
+                    // Container( // 뒤로가기. 이 경우 리스트 화면을 간다.
+                    //   child:
+                    //   RaisedButton.icon(
+                    //     onPressed: () {
+                    //       Navigator.push(
+                    //           context,
+                    //           CupertinoPageRoute(builder: (context) => aerobic())); // 다시 리스트 화면으로 이동한다.
+                    //     },
+                    //     shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.all(Radius.circular(40.0))),
+                    //     color: Colors.white60,
+                    //     splashColor: Colors.blue,
+                    //     textColor: Colors.black45,
+                    //     label: Text('', // 글자를 추가할 경우가 있음 지우지 말것
+                    //         style:
+                    //         TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+                    //     icon: Icon(Icons.arrow_back_rounded,
+                    //         size: 55, color: Colors.black54),
+                    //   ),
+                    // ),
                     Container( // 완료. 다음
+                      height: 60,
+                      width: 350,
                       child:
                       RaisedButton.icon(
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(builder: (context) => breathingRest()));
+                              CupertinoPageRoute(builder: (context) => ADgoodjob()));
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                        color: Colors.white60,
-                        splashColor: Colors.red,
-                        textColor: Colors.black45,
-                        label: Text('',
+                            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                        color: Color(hexColor('#0E49B5')),
+                        splashColor: Colors.indigo,
+                        textColor: Colors.white,
+                        label: Text('완료',
                             style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
-                            size: 55, color: Colors.black54),
+                            size: 0, color: Colors.black54),
                       ),
                     ),
-
-                    Padding(padding: EdgeInsets.all(10.0)),
                   ],
                 )
               ],
@@ -184,74 +201,5 @@ class _breathingState extends State<breathing> {
     //floatingActionButtonLocation: FloatingActionButtonLocation.,
   }
 }
-
-class breathingRest extends StatelessWidget {
-  var done = false;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-            // Container( // 디자인 비교
-            //   margin: EdgeInsets.all(20),
-            //   width: 200,
-            //   height: 200,
-            //   child: CupertinoTimer(
-            //     duration: Duration(minutes: 1),
-            //   ),
-            // ),
-            Container(
-              margin: EdgeInsets.all(20),
-              width: 200,
-              height: 200,
-              child:
-              CupertinoTimer(
-                duration: Duration(minutes: 1),
-                startOnInit: true, //무조건 시작
-                timeStyle: TextStyle(
-                    fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
-                ringColor: Colors.blue,
-                ringStroke: 10,
-                valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(minutes: 1))
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SecondScreen()));
-                },
-              ),
-            ),
-            Container(
-              child:
-              RaisedButton.icon(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      CupertinoPageRoute(builder: (context) => ADgoodjob()));
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                color: Colors.white60,
-                splashColor: Colors.red,
-                textColor: Colors.black45,
-                label: Text('다음 운동',
-                    style:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
-                icon: Icon(Icons.arrow_forward_rounded,
-                    size: 55, color: Colors.black54),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
-
 
 
