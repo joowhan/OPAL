@@ -230,10 +230,7 @@ var list1 = Column(
                 ),
                 SizedBox(width: 20,
                 ),
-                Center(child: Image.asset('images/stars.png',
-                height: 75,
-                  width:100,
-                    )),
+                Center(child: Image.asset('images/stars.png')),
               ],
             )
         )
@@ -279,6 +276,13 @@ class updownRest extends StatelessWidget {
                     fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
+                valueListener: (timeElapsed) {
+                  if (timeElapsed == Duration(minutes: 1))
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SecondScreen()));
+                },
               ),
             ),
             Padding(padding: EdgeInsets.only(bottom: 20.0)),

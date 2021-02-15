@@ -12,6 +12,14 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  hexColor (String colorhexcode){
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -51,7 +59,7 @@ class _HomeState extends State<Home> {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                color: Colors.blue[900],
+                color: Color(hexColor('#4F03FF')),
                   splashColor: Colors.indigo[900],
                 textColor: Colors.white,
                 label: Text('휠체어 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
@@ -79,7 +87,7 @@ class _HomeState extends State<Home> {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                color: Colors.indigo[900],
+                color:Color(hexColor('#4F03FF')),
                 splashColor: Colors.indigo[900],
                 textColor: Colors.white,
                 label: Text('노인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
