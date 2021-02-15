@@ -15,7 +15,16 @@ class Recommendation extends StatefulWidget {
 
 class _RecommendationState extends State<Recommendation> {
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   Widget build(BuildContext context) {
+
 
     var titleSection1 = Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -43,7 +52,7 @@ class _RecommendationState extends State<Recommendation> {
               height: (MediaQuery.of(context).size.height -
                       MediaQuery.of(context).padding.top) *
                   0.25,
-              width: 380,
+              width: 350,
               child: RaisedButton.icon(
                 onPressed: () {
                   Navigator.push(
@@ -73,7 +82,7 @@ class _RecommendationState extends State<Recommendation> {
               height: (MediaQuery.of(context).size.height -
                       MediaQuery.of(context).padding.top) *
                   0.25,
-              width: 380,
+              width: 350,
               child: RaisedButton.icon(
                 onPressed: () {
                   Navigator.push(
@@ -102,7 +111,7 @@ class _RecommendationState extends State<Recommendation> {
               height: (MediaQuery.of(context).size.height -
                       MediaQuery.of(context).padding.top) *
                   0.25,
-              width: 380,
+              width: 350,
               child: RaisedButton.icon(
                 onPressed: () {
                   Navigator.push(
@@ -131,11 +140,11 @@ class _RecommendationState extends State<Recommendation> {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Color(hexColor('#153E90')),
           title: Text('휠체어 운동 ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 35,
+                fontSize: 28,
                 color: Colors.white,
               ))),
       body: Center(

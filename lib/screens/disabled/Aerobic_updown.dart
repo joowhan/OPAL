@@ -7,6 +7,7 @@ import 'package:opalapp/screens/disabled/Aerobic_page.dart';
 import 'package:opalapp/screens/disabled/Aerobic_bounce.dart';
 import 'package:cupertino_timer/cupertino_timer.dart';
 
+
 class aerobic_updown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,17 +16,23 @@ class aerobic_updown extends StatelessWidget {
     );
   }
 }
-
 class updown extends StatefulWidget {
   @override
   _updownState createState() => _updownState();
 }
-
 //동영상
 class _updownState extends State<updown> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   void initState() {
     // VideoPlayerController를 저장하기 위한 변수를 만들고 VideoPlayerController는
     // asset, 파일, 인터넷 등의 영상들을 제어하기 위해 다양한 생성자를 제공.
@@ -37,7 +44,7 @@ class _updownState extends State<updown> {
     _initializeVideoPlayerFuture = _controller.initialize();
 
     // 비디오를 반복 재생하기 위해 컨트롤러를 사용합니다.
-    // _controller.setLooping(true);
+    _controller.setLooping(true);
     _controller.play();
 
     super.initState();
@@ -64,15 +71,15 @@ class _updownState extends State<updown> {
       // VideoPlayerController가 초기화를 진행하는 동안 로딩 스피너를 보여주기 위해
       // FutureBuilder를 사용합니다.
 
-
-      body: Container(
+      body:
+      Container(
         child: Column(
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top: 30.0),
+              padding: EdgeInsets.only(top:30.0),
               height: (MediaQuery.of(context).size.height -
-                      MediaQuery.of(context).padding.top) *
+                  MediaQuery.of(context).padding.top) *
                   0.4,
               width: 400,
               /*decoration: BoxDecoration(
@@ -96,112 +103,92 @@ class _updownState extends State<updown> {
                   }
                 },
               ),
+
             ),
 
             Container(
-                margin: const EdgeInsets.only(top: 50.0),
+                margin: const EdgeInsets.only(top: 80.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('팔 위아래로 흔들기',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 40),
-                        textAlign: TextAlign.left),
+                    Text(
+                        '팔 위아래로 흔들기',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        textAlign: TextAlign.left
+                    ),
                   ],
-                )),
+                )
+            ),
 
             Container(
-                margin: const EdgeInsets.all(50.0),
+                margin: const EdgeInsets.all(65.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('10 회',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 60,
-                            color: Colors.blueAccent),
-                        textAlign: TextAlign.left),
+                    Text(
+                        '10 회',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left
+                    ),
                   ],
-                )),
+                )
+            ),
 
             //buttons
             Column(
               children: <Widget>[
-                Column(),
+                Column(
+
+                ),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Padding(padding: EdgeInsets.all(10.0)),
-                    Container(
-                        //일시정
-                        child: RaisedButton.icon(
-                      onPressed: () {
-                        // 재생/일시 중지 기능을 `setState` 호출로 감쌉니다. 이렇게 함으로써 올바른 아이콘이 보여진다.
-                        setState(() {
-                          // 영상이 재생 중이라면, 일시 중지.
-                          if (_controller.value.isPlaying) {
-                            _controller.pause();
-                          } else {
-                            // 만약 영상이 일시 중지 상태였다면, 재생.
-                            _controller.play();
-                          }
-                        });
-                      },
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(20.0))),
-                      color: Colors.white60,
-                      splashColor: Colors.indigo,
-                      textColor: Colors.black87,
-                      label: Text('영상 시작',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 35)),
-                      icon: Icon(
-                          _controller.value.isPlaying
-                              ? Icons.pause
-                              : Icons.play_arrow,
-                          size: 0,
-                          color: Colors.black54),
-                    )),
-                    Padding(padding: EdgeInsets.all(10.0)),
-                    Container(
-                      // 완료. 다음
-                      child: RaisedButton.icon(
+                    // Container( // 뒤로가기. 이 경우 리스트 화면을 간다.
+                    //   child:
+                    //   RaisedButton.icon(
+                    //     onPressed: () {
+                    //       Navigator.push(
+                    //           context,
+                    //           CupertinoPageRoute(builder: (context) => aerobic())); // 다시 리스트 화면으로 이동한다.
+                    //     },
+                    //     shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.all(Radius.circular(40.0))),
+                    //     color: Colors.white60,
+                    //     splashColor: Colors.blue,
+                    //     textColor: Colors.black45,
+                    //     label: Text('', // 글자를 추가할 경우가 있음 지우지 말것
+                    //         style:
+                    //         TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+                    //     icon: Icon(Icons.arrow_back_rounded,
+                    //         size: 55, color: Colors.black54),
+                    //   ),
+                    // ),
+                    Container( // 완료. 다음
+                      height: 60,
+                      width: 350,
+                      child:
+                      RaisedButton.icon(
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(
-                                  builder: (context) => updownRest()));
+                              CupertinoPageRoute(builder: (context) => updownRest()));
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20.0))),
-                        color: Colors.white60,
+                            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                        color: Color(hexColor('#0E49B5')),
                         splashColor: Colors.indigo,
-                        textColor: Colors.black87,
-                        label: Text('넘어가기',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 35)),
+                        textColor: Colors.white,
+                        label: Text('완료',
+                            style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
                             size: 0, color: Colors.black54),
                       ),
                     ),
-                    /*CupertinoTimer(
-                      duration: Duration(seconds: 3),
-                      startOnInit: true, //무조건 시작
-                      valueListener: (timeElapsed) {
-                        if (timeElapsed == Duration(minutes: 1))
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SecondScreen()));
-                      },
-                    ),*/
-                    Padding(padding: EdgeInsets.all(10.0)),
                   ],
                 )
               ],
@@ -209,6 +196,7 @@ class _updownState extends State<updown> {
           ],
         ),
       ),
+
     );
 
     //floatingActionButtonLocation: FloatingActionButtonLocation.,
@@ -240,27 +228,30 @@ var list1 = Column(
               children: <Widget>[
                 Column(
                   children: [
-                    Text('다음 운동',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                        textAlign: TextAlign.left),
-                    Text('바운스',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 40),
-                        textAlign: TextAlign.left),
+                    Text(
+                        '다음 운동',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        textAlign: TextAlign.left
+                    ),
+                    Text(
+                        '바운스',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        textAlign: TextAlign.left
+                    ),
                   ],
                 ),
-                SizedBox(
-                  width: 20,
+                SizedBox(width: 20,
                 ),
                 Center(child: Image.asset('images/stars.png')),
               ],
-            ))
+            )
+        )
         // ),
       ],
     ),
   ],
 );
+
 
 class updownRest extends StatelessWidget {
   var done = false;
@@ -277,17 +268,20 @@ class updownRest extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('휴 식',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 70),
-                        textAlign: TextAlign.left),
+                    Text(
+                        '휴 식',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70),
+                        textAlign: TextAlign.left
+                    ),
                   ],
-                )),
+                )
+            ),
             Container(
               margin: EdgeInsets.all(10),
               width: 200,
               height: 200,
-              child: CupertinoTimer(
+              child:
+              CupertinoTimer(
                 duration: Duration(minutes: 1),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
@@ -305,9 +299,11 @@ class updownRest extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.only(bottom: 20.0)),
             Container(
-              child: RaisedButton.icon(
+              child:
+              RaisedButton.icon(
                 onPressed: () {
-                  Navigator.push(context,
+                  Navigator.push(
+                      context,
                       CupertinoPageRoute(builder: (context) => SecondScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
@@ -318,7 +314,7 @@ class updownRest extends StatelessWidget {
                 textColor: Colors.black87,
                 label: Text('넘어가기',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),

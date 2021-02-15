@@ -9,7 +9,15 @@ class aerobic extends StatefulWidget {
 }
 
 class _aerobicState extends State<aerobic> {
+
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
   Widget build(BuildContext context) {
     var goodjob = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -404,11 +412,11 @@ class _aerobicState extends State<aerobic> {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Color(hexColor('#153E90')),
           title: Text('유산소 ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 35,
+                fontSize: 28,
                 color: Colors.white,
               ))),
       body: Center(
@@ -441,7 +449,7 @@ class _aerobicState extends State<aerobic> {
                          context,
                          CupertinoPageRoute(builder: (context) => aerobic_page()));
                    },
-          color: Colors.indigo[900],
+          color: Color(hexColor('#0E49B5')),
           textColor: Colors.white,
 
           child: Text('시작하기',

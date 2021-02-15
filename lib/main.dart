@@ -53,13 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
         appBar: AppBar(
 
-            backgroundColor: Color(hexColor('#0336FF')),
+            backgroundColor: Color(hexColor('153E90')),
 
           title: Text('OPAL 운동',
 
               style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 35,
+              fontSize: 28,
               color:Colors.white,
               )
           )
@@ -88,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // ignore: deprecated_member_use
                 title: Text('Start Training'),
               )
-            ]));
+            ])
+    );
   }
 }

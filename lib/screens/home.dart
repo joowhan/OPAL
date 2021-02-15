@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
                   MediaQuery.of(context).padding.bottom)*0.29,
-              width: 400,
+              width: 350,
               child:
               RaisedButton.icon(
                 onPressed: () {
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                color: Color(hexColor('#4F03FF')),
+                color: Color(hexColor('0E49B5')),
                   splashColor: Colors.indigo[900],
                 textColor: Colors.white,
                 label: Text('휠체어 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
                   MediaQuery.of(context).padding.bottom)*0.29,
-              width: 400,
+              width: 350,
               child:
               RaisedButton.icon(
                 onPressed: () {
@@ -87,7 +87,7 @@ class _HomeState extends State<Home> {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                color:Color(hexColor('#4F03FF')),
+                color:Color(hexColor('#0E49B5')),
                 splashColor: Colors.indigo[900],
                 textColor: Colors.white,
                 label: Text('노인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),

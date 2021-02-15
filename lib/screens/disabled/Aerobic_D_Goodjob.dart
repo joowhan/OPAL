@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import '../../main.dart';
 import '../home.dart';
 
 // ignore: camel_case_types
 class ADgoodjob extends StatelessWidget {
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
   Widget build(BuildContext context) {
 
     var star = Column(
@@ -52,6 +58,7 @@ class ADgoodjob extends StatelessWidget {
           Column(
           children: <Widget>[
                 Container(
+                    width: 350,
                   decoration: BoxDecoration(
                     border: Border.all(
                         color: Colors.grey[200]
@@ -64,29 +71,29 @@ class ADgoodjob extends StatelessWidget {
                     children: <Widget>[
                     Text(
     '''
+    
 유산소
 '''    ,
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                         textAlign: TextAlign.left
                     ),
-                    Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 50.0),
-                        alignment: Alignment.center,
-                        child: Row(
-                          children: <Widget>[
-                            Icon(Icons.schedule, size: 30),
-                            Text(
-                                ' 30분',
-                                style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-                                textAlign: TextAlign.center
-                            )
-                          ]
-                        )
-                    ),
+                    // Container(
+                    //     margin: const EdgeInsets.symmetric(horizontal: 50.0),
+                    //     alignment: Alignment.center,
+                    //     child: Row(
+                    //       children: <Widget>[
+                    //         Icon(Icons.schedule, size: 30),
+                    //         Text(
+                    //             ' 30분',
+                    //             style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+                    //             textAlign: TextAlign.center
+                    //         )
+                    //       ]
+                    //     )
+                    // ),
                     Container(
                       child: Text(
     '''
-    
 팔 위아래로 흔들기 X 5 
 바운스 X 10
 팔 휘두르기 X 15
@@ -125,7 +132,7 @@ class ADgoodjob extends StatelessWidget {
       ),
 
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(0),
         child: RaisedButton(
           onPressed: () {
             Navigator.push(
@@ -133,7 +140,7 @@ class ADgoodjob extends StatelessWidget {
                 context,
                 CupertinoPageRoute(builder: (context) => MyHomePage()));
           },
-          color: Colors.indigo[900],
+          color: Color(hexColor('#0E49B5')),
           textColor: Colors.white,
           child: Text('완료',
               textAlign: TextAlign.left,
