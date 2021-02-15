@@ -202,6 +202,13 @@ class bounceRest extends StatelessWidget {
                     fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
+                valueListener: (timeElapsed) {
+                  if (timeElapsed == Duration(minutes: 1))
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SecondScreen()));
+                },
               ),
             ),
             Container(
