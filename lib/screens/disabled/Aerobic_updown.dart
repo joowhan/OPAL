@@ -126,27 +126,6 @@ class _updownState extends State<updown> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Padding(padding: EdgeInsets.all(10.0)),
-                    // Container( // 뒤로가기. 이 경우 리스트 화면을 간다.
-                    //   child:
-                    //   RaisedButton.icon(
-                    //     onPressed: () {
-                    //       Navigator.push(
-                    //           context,
-                    //           CupertinoPageRoute(builder: (context) => aerobic())); // 다시 리스트 화면으로 이동한다.
-                    //     },
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                    //     color: Colors.white60,
-                    //     splashColor: Colors.blue,
-                    //     textColor: Colors.black45,
-                    //     label: Text('', // 글자를 추가할 경우가 있음 지우지 말것
-                    //         style:
-                    //         TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-                    //     icon: Icon(Icons.arrow_back_rounded,
-                    //         size: 55, color: Colors.black54),
-                    //   ),
-                    // ),
-
                     Container( //일시정
                         child: RaisedButton.icon(
                           onPressed: () {
