@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         appBar: AppBar(
 
-            backgroundColor: Color(hexColor('#3700B3')),
+            backgroundColor: Color(hexColor('#0336FF')),
 
           title: Text('OPAL 운동',
 

@@ -231,20 +231,27 @@ var list1 = Column(
               borderRadius: BorderRadius.circular(10.0),
             ),
             margin: const EdgeInsets.all(10),
-            child: Column(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Text(
-                    '다음 운동',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    textAlign: TextAlign.left
+                Column(
+                  children: [
+                    Text(
+                        '다음 운동',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        textAlign: TextAlign.left
+                    ),
+                    Text(
+                        '바운스',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        textAlign: TextAlign.left
+                    ),
+                  ],
                 ),
-                Text(
-                    '바운스',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-                    textAlign: TextAlign.left
+                SizedBox(width: 20,
                 ),
+                Center(child: Image.asset('images/stars.png')),
               ],
             )
         )
