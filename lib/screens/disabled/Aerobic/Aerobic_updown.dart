@@ -7,7 +7,6 @@ import 'package:opalapp/screens/disabled/Aerobic/Aerobic_page.dart';
 import 'package:opalapp/screens/disabled/Aerobic/Aerobic_bounce.dart';
 import 'package:cupertino_timer/cupertino_timer.dart';
 
-
 class aerobic_updown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,17 +15,18 @@ class aerobic_updown extends StatelessWidget {
     );
   }
 }
+
 class updown extends StatefulWidget {
   @override
   _updownState createState() => _updownState();
 }
+
 //동영상
 class _updownState extends State<updown> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
-
-  hexColor (String colorhexcode) {
+  hexColor(String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
     int colorint = int.parse(colornew);
@@ -71,15 +71,14 @@ class _updownState extends State<updown> {
       // VideoPlayerController가 초기화를 진행하는 동안 로딩 스피너를 보여주기 위해
       // FutureBuilder를 사용합니다.
 
-      body:
-      Container(
+      body: Container(
         child: Column(
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0))s,
             Container(
-              padding: EdgeInsets.only(top:35.0),
+              padding: EdgeInsets.only(top: 35.0),
               height: (MediaQuery.of(context).size.height -
-                  MediaQuery.of(context).padding.top) *
+                      MediaQuery.of(context).padding.top) *
                   0.4,
               width: 400,
               /*decoration: BoxDecoration(
@@ -103,7 +102,6 @@ class _updownState extends State<updown> {
                   }
                 },
               ),
-
             ),
 
             Container(
@@ -112,14 +110,14 @@ class _updownState extends State<updown> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                        '팔 위아래로 흔들기',
-                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('팔 위아래로 흔들기',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
 
             Container(
                 margin: const EdgeInsets.all(65.0),
@@ -131,8 +129,8 @@ class _updownState extends State<updown> {
                       margin: EdgeInsets.all(10),
                       width: 100,
                       height: 100,
-                      child:
-                      CupertinoTimer( //추가된 운동화면 타이머
+                      child: CupertinoTimer(
+                        //추가된 운동화면 타이머
                         duration: Duration(seconds: 20),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
@@ -147,7 +145,7 @@ class _updownState extends State<updown> {
                                     builder: (context) => updownRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
-                            if(timeElapsed == Duration(seconds: 20)){
+                            if (timeElapsed == Duration(seconds: 20)) {
                               if (_controller.value.isPlaying) {
                                 _controller.pause();
                               }
@@ -156,22 +154,20 @@ class _updownState extends State<updown> {
                         },
                       ),
                     ),
-                    Text(
-                        '10 회',
-                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
-                        textAlign: TextAlign.left
-                    ),
-
+                    Text('10 회',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 60,
+                            color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
 
             //buttons
             Column(
               children: <Widget>[
-                Column(
-
-                ),
+                Column(),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -196,15 +192,16 @@ class _updownState extends State<updown> {
                     //         size: 55, color: Colors.black54),
                     //   ),
                     // ),
-                    Container( // 완료. 다음
+                    Container(
+                      // 완료. 다음
                       height: 60,
                       width: 350,
-                      child:
-                      RaisedButton.icon(
+                      child: RaisedButton.icon(
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(builder: (context) => updownRest()));
+                              CupertinoPageRoute(
+                                  builder: (context) => updownRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 눌렀을 때
                             if (_controller.value.isPlaying) {
@@ -214,13 +211,16 @@ class _updownState extends State<updown> {
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
                         color: Color(hexColor('#0E49B5')),
                         splashColor: Colors.indigo,
                         textColor: Colors.white,
                         label: Text('완료',
-                            style:
-                            TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 35)),
+                            style: TextStyle(
+                                fontFamily: "Gmarket",
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
                             size: 0, color: Colors.black54),
                       ),
@@ -232,7 +232,6 @@ class _updownState extends State<updown> {
           ],
         ),
       ),
-
     );
 
     //floatingActionButtonLocation: FloatingActionButtonLocation.,
@@ -264,30 +263,31 @@ var list1 = Column(
               children: <Widget>[
                 Column(
                   children: [
-                    Text(
-                        '다음 운동',
-                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 20),
-                        textAlign: TextAlign.left
-                    ),
-                    Text(
-                        '바운스',
-                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('다음 운동',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                        textAlign: TextAlign.left),
+                    Text('바운스',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
+                        textAlign: TextAlign.left),
                   ],
                 ),
-                SizedBox(width: 20,
+                SizedBox(
+                  width: 20,
                 ),
                 Center(child: Image.asset('images/stars.png')),
               ],
-            )
-        )
+            ))
         // ),
       ],
     ),
   ],
 );
-
 
 class updownRest extends StatelessWidget {
   var done = false;
@@ -304,20 +304,19 @@ class updownRest extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                        '휴 식',
-                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 70),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('휴 식',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 70),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
             Container(
               margin: EdgeInsets.all(10),
               width: 200,
               height: 200,
-              child:
-              CupertinoTimer(
+              child: CupertinoTimer(
                 duration: Duration(seconds: 20),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
@@ -335,11 +334,9 @@ class updownRest extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.only(bottom: 20.0)),
             Container(
-              child:
-              RaisedButton.icon(
+              child: RaisedButton.icon(
                 onPressed: () {
-                  Navigator.push(
-                      context,
+                  Navigator.push(context,
                       CupertinoPageRoute(builder: (context) => SecondScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
@@ -349,8 +346,10 @@ class updownRest extends StatelessWidget {
                 splashColor: Colors.indigo,
                 textColor: Colors.black87,
                 label: Text('넘어가기',
-                    style:
-                    TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
+                    style: TextStyle(
+                        fontFamily: "Gmarket",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),
