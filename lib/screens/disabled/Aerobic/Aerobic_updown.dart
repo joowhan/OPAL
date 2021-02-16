@@ -132,22 +132,22 @@ class _updownState extends State<updown> {
                       width: 100,
                       height: 100,
                       child:
-                      CupertinoTimer(
-                        duration: Duration(minutes: 1),
+                      CupertinoTimer( //추가된 운동화면 타이머
+                        duration: Duration(seconds: 20),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
                             fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
-                          if (timeElapsed == Duration(minutes: 1))
+                          if (timeElapsed == Duration(seconds: 20))
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => updownRest()));
                           setState(() {
-                            // 영상이 재생 중이라면, 일시 중지 시킵니다.
-                            if(timeElapsed == Duration(minutes: 1)){
+                            // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
+                            if(timeElapsed == Duration(seconds: 20)){
                               if (_controller.value.isPlaying) {
                                 _controller.pause();
                               }
@@ -206,12 +206,11 @@ class _updownState extends State<updown> {
                               context,
                               CupertinoPageRoute(builder: (context) => updownRest()));
                           setState(() {
-                            // 영상이 재생 중이라면, 일시 중지 시킵니다.
+                            // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 눌렀을 때
                             if (_controller.value.isPlaying) {
                               _controller.pause();
                             }
                           });
-
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
@@ -319,7 +318,7 @@ class updownRest extends StatelessWidget {
               height: 200,
               child:
               CupertinoTimer(
-                duration: Duration(minutes: 1),
+                duration: Duration(seconds: 20),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
                     fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
