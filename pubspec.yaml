@@ -84,3 +84,8 @@ flutter:
     - video/pushWall.mp4
     - video/rowing.mp4
     - video/breathing.mp4
+
+  fonts:
+    - family: Gmarket
+      fonts:
+        - asset: fonts/GmarketSansTTFMedium.ttf

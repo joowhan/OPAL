@@ -111,7 +111,7 @@ class _rowingState extends State<rowing> {
                   children: <Widget>[
                     Text(
                         '노 젓기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -126,7 +126,7 @@ class _rowingState extends State<rowing> {
                   children: <Widget>[
                     Text(
                         '10 회',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -187,7 +187,7 @@ class _rowingState extends State<rowing> {
                         textColor: Colors.white,
                         label: Text('완료',
                             style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
+                            TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
                             size: 0, color: Colors.black54),
                       ),
@@ -233,12 +233,12 @@ var list1 = Column(
                   children: [
                     Text(
                         '다음 운동',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.left
                     ),
                     Text(
                         '숨쉬기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -273,7 +273,7 @@ class rowingRest extends StatelessWidget {
                   children: <Widget>[
                     Text(
                         '휴 식',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 70),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -288,7 +288,7 @@ class rowingRest extends StatelessWidget {
                 duration: Duration(minutes: 1),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
+                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
@@ -317,7 +317,7 @@ class rowingRest extends StatelessWidget {
                 textColor: Colors.black87,
                 label: Text('넘어가기',
                     style:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                    TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),

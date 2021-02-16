@@ -15,6 +15,7 @@ class aerobic_bounce extends StatelessWidget {
     );
   }
 }
+
 class bounce extends StatefulWidget {
   @override
   _bounceState createState() => _bounceState();
@@ -24,7 +25,7 @@ class _bounceState extends State<bounce> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
-  hexColor (String colorhexcode) {
+  hexColor(String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
     int colorint = int.parse(colornew);
@@ -69,15 +70,14 @@ class _bounceState extends State<bounce> {
       // VideoPlayerController가 초기화를 진행하는 동안 로딩 스피너를 보여주기 위해
       // FutureBuilder를 사용합니다.
 
-      body:
-      Container(
+      body: Container(
         child: Column(
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top:30.0),
+              padding: EdgeInsets.only(top: 30.0),
               height: (MediaQuery.of(context).size.height -
-                  MediaQuery.of(context).padding.top) *
+                      MediaQuery.of(context).padding.top) *
                   0.4,
               width: 400,
               /*decoration: BoxDecoration(
@@ -101,7 +101,6 @@ class _bounceState extends State<bounce> {
                   }
                 },
               ),
-
             ),
             Container(
                 margin: const EdgeInsets.only(top: 80.0),
@@ -109,14 +108,14 @@ class _bounceState extends State<bounce> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                        '바운스',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('바운스',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
 
             Container(
                 margin: const EdgeInsets.all(65.0),
@@ -124,21 +123,20 @@ class _bounceState extends State<bounce> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                        '10 회',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('10 회',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 60,
+                            color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
 
             //buttons
             Column(
               children: <Widget>[
-                Column(
-
-                ),
+                Column(),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -163,15 +161,16 @@ class _bounceState extends State<bounce> {
                     //         size: 55, color: Colors.black54),
                     //   ),
                     // ),
-                    Container( // 완료. 다음
+                    Container(
+                      // 완료. 다음
                       height: 60,
                       width: 350,
-                      child:
-                      RaisedButton.icon(
+                      child: RaisedButton.icon(
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(builder: (context) => bounceRest()));
+                              CupertinoPageRoute(
+                                  builder: (context) => bounceRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다.
                             if (_controller.value.isPlaying) {
@@ -181,13 +180,16 @@ class _bounceState extends State<bounce> {
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
                         color: Color(hexColor('#0E49B5')),
                         splashColor: Colors.indigo,
                         textColor: Colors.white,
                         label: Text('완료',
-                            style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
+                            style: TextStyle(
+                                fontFamily: "Gmarket",
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
                             size: 0, color: Colors.black54),
                       ),
@@ -199,7 +201,6 @@ class _bounceState extends State<bounce> {
           ],
         ),
       ),
-
     );
 
     //floatingActionButtonLocation: FloatingActionButtonLocation.,
@@ -231,30 +232,31 @@ var list1 = Column(
               children: <Widget>[
                 Column(
                   children: [
-                    Text(
-                        '다음 운동',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                        textAlign: TextAlign.left
-                    ),
-                    Text(
-                        '팔 휘두르기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('다음 운동',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                        textAlign: TextAlign.left),
+                    Text('팔 휘두르기',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
+                        textAlign: TextAlign.left),
                   ],
                 ),
-                SizedBox(width: 20,
+                SizedBox(
+                  width: 20,
                 ),
                 Center(child: Image.asset('images/stars.png')),
               ],
-            )
-        )
+            ))
         // ),
       ],
     ),
   ],
 );
-
 
 class bounceRest extends StatelessWidget {
   var done = false;
@@ -271,24 +273,23 @@ class bounceRest extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                        '휴 식',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('휴 식',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 70),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
             Container(
               margin: EdgeInsets.all(10),
               width: 200,
               height: 200,
-              child:
-              CupertinoTimer(
+              child: CupertinoTimer(
                 duration: Duration(minutes: 1),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
+                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
@@ -296,17 +297,15 @@ class bounceRest extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondScreen()));
+                            builder: (context) => ThirdScreen()));
                 },
               ),
             ),
             Padding(padding: EdgeInsets.only(bottom: 20.0)),
             Container(
-              child:
-              RaisedButton.icon(
+              child: RaisedButton.icon(
                 onPressed: () {
-                  Navigator.push(
-                      context,
+                  Navigator.push(context,
                       CupertinoPageRoute(builder: (context) => ThirdScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
@@ -317,7 +316,7 @@ class bounceRest extends StatelessWidget {
                 textColor: Colors.black87,
                 label: Text('넘어가기',
                     style:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                        TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),

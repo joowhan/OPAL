@@ -35,7 +35,7 @@ class _RecommendationState extends State<Recommendation> {
             Padding(padding: EdgeInsets.only(right: 20.0)),
             //Icon(Icons.accessible_rounded, size: 40),
             Text('휠체어 운동',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                style: TextStyle(fontFamily: "Gmarket", fontSize: 40, fontWeight: FontWeight.bold)),
           ],
         ),
         //Padding(padding: EdgeInsets.only(top: 20.0)),
@@ -68,7 +68,7 @@ class _RecommendationState extends State<Recommendation> {
                 label: Text('유산소 ',
                     textAlign: TextAlign.left,
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                      TextStyle(fontFamily: "Gmarket", fontSize: 40, fontWeight: FontWeight.bold)),
                 icon: Icon(Icons.directions_run_rounded,
                     size: 50, color: Colors.black87),
               ),
@@ -97,7 +97,7 @@ class _RecommendationState extends State<Recommendation> {
                 textColor: Colors.black87,
                 label: Text('유연성 ',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                      TextStyle(fontFamily: "Gmarket", fontSize: 40, fontWeight: FontWeight.bold)),
                 icon: Icon(Icons.emoji_people_rounded,
                     size: 55, color: Colors.black87),
               ),
@@ -126,7 +126,7 @@ class _RecommendationState extends State<Recommendation> {
                 textColor: Colors.black87,
                 label: Text('근력 ',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                    TextStyle(fontFamily: "Gmarket", fontSize: 40, fontWeight: FontWeight.bold)),
                 icon: Icon(Icons.fitness_center_rounded,
                     size: 55, color: Colors.black87),
               ),
