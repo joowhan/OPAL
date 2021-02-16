@@ -57,11 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           title: Text('OPAL 운동',
 
-              style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 28,
-              color:Colors.white,
-              )
+              style: TextStyle(fontFamily: "Gmarket", fontSize: 28, fontWeight: FontWeight.bold)
           )
         ),
         body:

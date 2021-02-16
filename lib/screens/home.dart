@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             Padding(padding: EdgeInsets.only(right:30.0)),
             Text('안녕하세요!',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50)),
+                style: TextStyle(fontFamily: "Gmarket", fontSize: 40, fontWeight: FontWeight.bold)),
 
           ],
         ),
@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                 color: Color(hexColor('0E49B5')),
                   splashColor: Colors.indigo[900],
                 textColor: Colors.white,
-                label: Text('휠체어 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
+                label: Text('휠체어 운동', style:  TextStyle(fontFamily: "Gmarket", fontSize: 50, fontWeight: FontWeight.bold)),
                 icon: Icon(Icons.fitness_center_rounded, size: 0, color: Colors.white),
               ),
             ),
@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
                 color:Color(hexColor('#0E49B5')),
                 splashColor: Colors.indigo[900],
                 textColor: Colors.white,
-                label: Text('노인 운동', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 55)),
+                label: Text('노인 운동', style: TextStyle(fontFamily: "Gmarket", fontSize: 50, fontWeight: FontWeight.bold)),
                 icon: Icon(Icons.fitness_center_rounded, size: 0, color: Colors.white),
               ),
             ),

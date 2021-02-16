@@ -44,7 +44,7 @@ class ADgoodjob extends StatelessWidget {
           Text(
         '잘 하셨습니다!'
         ,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40)
+        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)
           )
         ],
     ),
@@ -74,7 +74,7 @@ class ADgoodjob extends StatelessWidget {
     
 유산소
 '''    ,
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 25),
                         textAlign: TextAlign.left
                     ),
                     // Container(
@@ -102,7 +102,7 @@ class ADgoodjob extends StatelessWidget {
 숨 쉬기 X 5
 
     ''',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontFamily: "Gmarket",fontSize: 20),
                           textAlign: TextAlign.left
                       )
                     )
@@ -145,7 +145,7 @@ class ADgoodjob extends StatelessWidget {
           child: Text('완료',
               textAlign: TextAlign.left,
               style:
-              TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
+              TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 45)),
         ),
       ),
     );

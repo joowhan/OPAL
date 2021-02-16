@@ -17,6 +17,7 @@ class aerobic_breathing extends StatelessWidget {
     );
   }
 }
+
 class breathing extends StatefulWidget {
   @override
   _breathingState createState() => _breathingState();
@@ -26,7 +27,7 @@ class _breathingState extends State<breathing> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
-  hexColor (String colorhexcode) {
+  hexColor(String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
     int colorint = int.parse(colornew);
@@ -71,15 +72,14 @@ class _breathingState extends State<breathing> {
       // VideoPlayerController가 초기화를 진행하는 동안 로딩 스피너를 보여주기 위해
       // FutureBuilder를 사용합니다.
 
-      body:
-      Container(
+      body: Container(
         child: Column(
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top:35.0),
+              padding: EdgeInsets.only(top: 35.0),
               height: (MediaQuery.of(context).size.height -
-                  MediaQuery.of(context).padding.top) *
+                      MediaQuery.of(context).padding.top) *
                   0.4,
               width: 400,
               /*decoration: BoxDecoration(
@@ -103,7 +103,6 @@ class _breathingState extends State<breathing> {
                   }
                 },
               ),
-
             ),
             Container(
                 margin: const EdgeInsets.only(top: 80.0),
@@ -111,14 +110,12 @@ class _breathingState extends State<breathing> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                        '숨쉬기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('숨쉬기',
+                        style: TextStyle(fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold, fontSize: 40),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
 
             Container(
                 margin: const EdgeInsets.all(65.0),
@@ -126,21 +123,19 @@ class _breathingState extends State<breathing> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                        '10 회',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
-                        textAlign: TextAlign.left
-                    ),
+                    Text('10 회',
+                        style: TextStyle(fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 60,
+                            color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left),
                   ],
-                )
-            ),
+                )),
 
             //buttons
             Column(
               children: <Widget>[
-                Column(
-
-                ),
+                Column(),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -165,15 +160,16 @@ class _breathingState extends State<breathing> {
                     //         size: 55, color: Colors.black54),
                     //   ),
                     // ),
-                    Container( // 완료. 다음
+                    Container(
+                      // 완료. 다음
                       height: 60,
                       width: 350,
-                      child:
-                      RaisedButton.icon(
+                      child: RaisedButton.icon(
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(builder: (context) => ADgoodjob()));
+                              CupertinoPageRoute(
+                                  builder: (context) => ADgoodjob()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다.
                             if (_controller.value.isPlaying) {
@@ -183,13 +179,14 @@ class _breathingState extends State<breathing> {
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
                         color: Color(hexColor('#0E49B5')),
                         splashColor: Colors.indigo,
                         textColor: Colors.white,
                         label: Text('완료',
-                            style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
+                            style: TextStyle(fontFamily: "Gmarket",
+                                fontWeight: FontWeight.bold, fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
                             size: 0, color: Colors.black54),
                       ),
@@ -201,11 +198,8 @@ class _breathingState extends State<breathing> {
           ],
         ),
       ),
-
     );
 
     //floatingActionButtonLocation: FloatingActionButtonLocation.,
   }
 }
-
-
