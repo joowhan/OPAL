@@ -75,7 +75,7 @@ class _bounceState extends State<bounce> {
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top:35.0),
+              padding: EdgeInsets.only(top:30.0),
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
