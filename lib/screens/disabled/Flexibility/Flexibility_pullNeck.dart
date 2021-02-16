@@ -2,27 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
-import 'Aerobic.dart';
-import 'package:opalapp/screens/disabled/Aerobic/Aerobic_page.dart';
-import 'package:opalapp/screens/disabled/Aerobic/Aerobic_bounce.dart';
 import 'package:cupertino_timer/cupertino_timer.dart';
+import 'package:opalapp/screens/disabled/Flexibility/Flexibility_page.dart';
 
-class aerobic_updown extends StatelessWidget {
+class flexibility_pullNeck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: updown(),
+      home: pullNeck(),
     );
   }
 }
-
-class updown extends StatefulWidget {
-  @override
-  _updownState createState() => _updownState();
-}
-
-//동영상
-class _updownState extends State<updown> {
+class pullNeck extends StatelessWidget {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
@@ -77,7 +68,7 @@ class _updownState extends State<updown> {
             Container(
               padding: EdgeInsets.only(top: 35.0),
               height: (MediaQuery.of(context).size.height -
-                      MediaQuery.of(context).padding.top) *
+                  MediaQuery.of(context).padding.top) *
                   0.4,
               width: 400,
               /*decoration: BoxDecoration(
@@ -201,7 +192,7 @@ class _updownState extends State<updown> {
                         },
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(15.0))),
+                            BorderRadius.all(Radius.circular(15.0))),
                         color: Color(hexColor('#0E49B5')),
                         splashColor: Colors.indigo,
                         textColor: Colors.white,
@@ -328,7 +319,7 @@ class updownRest extends StatelessWidget {
                 textColor: Colors.black87,
                 label: Text('넘어가기',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),

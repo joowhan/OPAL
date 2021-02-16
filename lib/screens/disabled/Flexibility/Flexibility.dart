@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:opalapp/screens/disabled/Flexibility/Flexibility_page.dart';
 import '../Aerobic/Aerobic_updown.dart';
 import '../Aerobic/Aerobic_page.dart';
 
@@ -593,7 +594,7 @@ class _flexState extends State<Flexibility> {
             Navigator.push(
               //push를 눌렀을 때 edit로 넘어가
                 context,
-                CupertinoPageRoute(builder: (context) => aerobic_page()));
+                CupertinoPageRoute(builder: (context) => flexibility_page()));
           },
           color: Colors.indigo[900],
           textColor: Colors.white,
