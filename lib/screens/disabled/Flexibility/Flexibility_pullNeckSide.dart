@@ -110,7 +110,7 @@ class _pullNeckSideState extends State<pullNeckSide> {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 34.5),
+                            fontSize: 33),
                         textAlign: TextAlign.left),
                   ],
                 )),

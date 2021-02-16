@@ -99,7 +99,7 @@ class _breathingState extends State<breathing> {
                   children: <Widget>[
                     Text('숨쉬기',
                         style: TextStyle(fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold, fontSize: 40),
+                            fontWeight: FontWeight.bold, fontSize: 33),
                         textAlign: TextAlign.left),
                   ],
                 )),

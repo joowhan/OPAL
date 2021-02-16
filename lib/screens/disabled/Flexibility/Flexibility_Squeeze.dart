@@ -101,7 +101,7 @@ class _squeezeState extends State<squeeze> {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 34.5),
+                            fontSize: 33),
                         textAlign: TextAlign.left),
                   ],
                 )),
