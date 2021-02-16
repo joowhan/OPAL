@@ -2,27 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
-import 'Aerobic.dart';
-import 'package:opalapp/screens/disabled/Aerobic/Aerobic_page.dart';
-import 'package:opalapp/screens/disabled/Aerobic/Aerobic_bounce.dart';
 import 'package:cupertino_timer/cupertino_timer.dart';
+import 'package:opalapp/screens/disabled/Flexibility/Flexibility_page.dart';
 
-class aerobic_updown extends StatelessWidget {
+class flexibility_pullNeckSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: updown(),
+      home: pullNeckSide(),
     );
   }
 }
-
-class updown extends StatefulWidget {
+class pullNeckSide extends StatefulWidget {
   @override
-  _updownState createState() => _updownState();
+  _pullNeckSideState createState() => _pullNeckSideState();
 }
 
-//동영상
-class _updownState extends State<updown> {
+class _pullNeckSideState extends State<pullNeckSide> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
@@ -110,21 +106,29 @@ class _updownState extends State<updown> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('팔 위아래로 흔들기',
+                    Text('목 옆으로 당기기',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 40),
+                            fontSize: 34.5),
                         textAlign: TextAlign.left),
                   ],
                 )),
 
             Container(
-                margin: const EdgeInsets.all(65.0),
+                margin: const EdgeInsets.all(50.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+
+                    Text('10 회',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 60,
+                            color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left),
                     Container(
                       margin: EdgeInsets.all(10),
                       width: 100,
@@ -134,7 +138,10 @@ class _updownState extends State<updown> {
                         duration: Duration(seconds: 20),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
-                            fontFamily: "Gmarket", fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.black,
+                        ),
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
@@ -142,7 +149,7 @@ class _updownState extends State<updown> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => updownRest()));
+                                    builder: (context) => pullNeckSideRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
                             if (timeElapsed == Duration(seconds: 20)) {
@@ -154,13 +161,6 @@ class _updownState extends State<updown> {
                         },
                       ),
                     ),
-                    Text('10 회',
-                        style: TextStyle(
-                            fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 60,
-                            color: Color(hexColor('#0E49B5'))),
-                        textAlign: TextAlign.left),
                   ],
                 )),
 
@@ -201,7 +201,7 @@ class _updownState extends State<updown> {
                           Navigator.push(
                               context,
                               CupertinoPageRoute(
-                                  builder: (context) => updownRest()));
+                                  builder: (context) => pullNeckSideRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 눌렀을 때
                             if (_controller.value.isPlaying) {
@@ -258,29 +258,34 @@ var list1 = Column(
             ),
             margin: const EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Column(
                   children: [
-                    Text('다음 운동',
+                    Text(
+                        '''
+다음 운동
+                        
+목 대각선으로 당기기
+''',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 18),
                         textAlign: TextAlign.left),
-                    Text('바운스',
-                        style: TextStyle(
-                            fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 40),
-                        textAlign: TextAlign.left),
+                    // Text('목 대각선으로 당기기',
+                    //     style: TextStyle(
+                    //         fontFamily: "Gmarket",
+                    //         fontWeight: FontWeight.bold,
+                    //         fontSize: 40),
+                    //     textAlign: TextAlign.left),
                   ],
                 ),
-                SizedBox(
-                  width: 20,
-                ),
-                Center(child: Image.asset('images/stars.png')),
+                // SizedBox(
+                //   width: 20,
+                // ),
+                Center(child: Image.asset('images/bounce.png')),
               ],
             ))
         // ),
@@ -289,7 +294,7 @@ var list1 = Column(
   ],
 );
 
-class updownRest extends StatelessWidget {
+class pullNeckSideRest extends StatelessWidget {
   var done = false;
   @override
   Widget build(BuildContext context) {
@@ -299,7 +304,7 @@ class updownRest extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-                margin: const EdgeInsets.only(top: 30.0),
+                margin: const EdgeInsets.only(top: 20.0, bottom: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -308,7 +313,7 @@ class updownRest extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 70),
+                            fontSize: 60),
                         textAlign: TextAlign.left),
                   ],
                 )),
@@ -320,7 +325,10 @@ class updownRest extends StatelessWidget {
                 duration: Duration(seconds: 20),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                  color: Colors.black,
+                ),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
@@ -328,7 +336,7 @@ class updownRest extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondScreen()));
+                            builder: (context) => ThirdScreen()));
                 },
               ),
             ),
@@ -337,7 +345,7 @@ class updownRest extends StatelessWidget {
               child: RaisedButton.icon(
                 onPressed: () {
                   Navigator.push(context,
-                      CupertinoPageRoute(builder: (context) => SecondScreen()));
+                      CupertinoPageRoute(builder: (context) => ThirdScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
                 shape: RoundedRectangleBorder(
@@ -362,3 +370,4 @@ class updownRest extends StatelessWidget {
     );
   }
 }
+

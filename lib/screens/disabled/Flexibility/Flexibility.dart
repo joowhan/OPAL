@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:opalapp/screens/disabled/Flexibility/Flexibility_page.dart';
 import '../Aerobic/Aerobic_updown.dart';
 import '../Aerobic/Aerobic_page.dart';
 
@@ -11,6 +12,14 @@ class Flexibility extends StatefulWidget {
 
 class _flexState extends State<Flexibility> {
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   Widget build(BuildContext context) {
     var goodjob = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -593,14 +602,15 @@ class _flexState extends State<Flexibility> {
             Navigator.push(
               //push를 눌렀을 때 edit로 넘어가
                 context,
-                CupertinoPageRoute(builder: (context) => aerobic_page()));
+                CupertinoPageRoute(builder: (context) => flexibility_page()));
           },
-          color: Colors.indigo[900],
+          color: Color(hexColor('#0E49B5')),
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           textColor: Colors.white,
           child: Text('시작하기',
               textAlign: TextAlign.left,
               style:
-              TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
+              TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
         ),
       ),
     );
