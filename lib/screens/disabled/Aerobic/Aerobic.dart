@@ -34,7 +34,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Text(
                         '유산소',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -61,7 +61,7 @@ class _aerobicState extends State<aerobic> {
                     Icon(Icons.schedule, size: 25),
                     Text(
                         ' 20분',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -111,7 +111,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Text(
                         '팔 위아래로 흔들기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -162,7 +162,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Text(
                         '바운스',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -213,7 +213,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Text(
                         '팔 휘두르기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -263,7 +263,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Text(
                         '벽 밀기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -313,7 +313,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Text(
                         '노 젓기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -363,7 +363,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Text(
                         '숨쉬기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -415,6 +415,7 @@ class _aerobicState extends State<aerobic> {
           backgroundColor: Color(hexColor('#153E90')),
           title: Text('유산소 ',
               style: TextStyle(
+                fontFamily: "Gmarket",
                 fontWeight: FontWeight.bold,
                 fontSize: 28,
                 color: Colors.white,
@@ -450,13 +451,14 @@ class _aerobicState extends State<aerobic> {
                          CupertinoPageRoute(builder: (context) => aerobic_page()));
                    },
           color: Color(hexColor('#0E49B5')),
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           textColor: Colors.white,
 
           child: Text('시작하기',
                      textAlign: TextAlign.left,
                     style:
 
-                     TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
+                     TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
               ),
       ),
     );

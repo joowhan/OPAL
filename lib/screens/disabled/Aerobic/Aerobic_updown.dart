@@ -75,7 +75,7 @@ class _updownState extends State<updown> {
       Container(
         child: Column(
           children: <Widget>[
-            //Padding(padding: EdgeInsets.all(10.0)),
+            //Padding(padding: EdgeInsets.all(10.0))s,
             Container(
               padding: EdgeInsets.only(top:35.0),
               height: (MediaQuery.of(context).size.height -
@@ -114,7 +114,7 @@ class _updownState extends State<updown> {
                   children: <Widget>[
                     Text(
                         '팔 위아래로 흔들기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -136,7 +136,7 @@ class _updownState extends State<updown> {
                         duration: Duration(minutes: 1),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
-                            fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
+                            fontFamily: "Gmarket", fontWeight: FontWeight.bold),
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
@@ -156,7 +156,7 @@ class _updownState extends State<updown> {
                     ),
                     Text(
                         '10 회',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left
                     ),
 
@@ -219,7 +219,7 @@ class _updownState extends State<updown> {
                         textColor: Colors.white,
                         label: Text('완료',
                             style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 35)),
+                            TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
                             size: 0, color: Colors.black54),
                       ),
@@ -265,12 +265,12 @@ var list1 = Column(
                   children: [
                     Text(
                         '다음 운동',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.left
                     ),
                     Text(
                         '바운스',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -305,7 +305,7 @@ class updownRest extends StatelessWidget {
                   children: <Widget>[
                     Text(
                         '휴 식',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 70),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -320,7 +320,7 @@ class updownRest extends StatelessWidget {
                 duration: Duration(minutes: 1),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
+                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
@@ -349,7 +349,7 @@ class updownRest extends StatelessWidget {
                 textColor: Colors.black87,
                 label: Text('넘어가기',
                     style:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                    TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),
