@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
-import 'package:opalapp/screens/disabled/Aerobic.dart';
-import 'package:opalapp/screens/disabled/Flexibility.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic.dart';
+import 'package:opalapp/screens/disabled/Flexibility/Flexibility.dart';
 import 'dart:convert';
-import 'disabled/Aerobic_D_Goodjob.dart';
-import 'disabled/M_strength.dart';
+import 'disabled/Aerobic/Aerobic_D_Goodjob.dart';
+import 'disabled/M_strength/M_strength.dart';
 import 'home.dart';
 
 class Recommendation extends StatefulWidget {

@@ -1,26 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:opalapp/screens/disabled/Aerobic_page.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_page.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
 import 'Aerobic.dart';
-import 'package:opalapp/screens/disabled/Aerobic_bounce.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_bounce.dart';
 import 'package:cupertino_timer/cupertino_timer.dart';
 
-class aerobic_rowing extends StatelessWidget {
+class aerobic_bounce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: rowing(),
-    );;
+      home: bounce(),
+    );
   }
 }
-class rowing extends StatefulWidget {
+class bounce extends StatefulWidget {
   @override
-  _rowingState createState() => _rowingState();
+  _bounceState createState() => _bounceState();
 }
 
-class _rowingState extends State<rowing> {
+class _bounceState extends State<bounce> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
@@ -75,7 +75,7 @@ class _rowingState extends State<rowing> {
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top:30.0),
+              padding: EdgeInsets.only(top:35.0),
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
@@ -110,7 +110,7 @@ class _rowingState extends State<rowing> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                        '노 젓기',
+                        '바운스',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
@@ -171,7 +171,13 @@ class _rowingState extends State<rowing> {
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(builder: (context) => rowingRest()));
+                              CupertinoPageRoute(builder: (context) => bounceRest()));
+                          setState(() {
+                            // 영상이 재생 중이라면, 일시 중지 시킵니다.
+                            if (_controller.value.isPlaying) {
+                              _controller.pause();
+                            }
+                          });
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
@@ -231,7 +237,7 @@ var list1 = Column(
                         textAlign: TextAlign.left
                     ),
                     Text(
-                        '숨쉬기',
+                        '팔 휘두르기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
@@ -250,7 +256,7 @@ var list1 = Column(
 );
 
 
-class rowingRest extends StatelessWidget {
+class bounceRest extends StatelessWidget {
   var done = false;
   @override
   Widget build(BuildContext context) {
@@ -290,7 +296,7 @@ class rowingRest extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LastScreen()));
+                            builder: (context) => SecondScreen()));
                 },
               ),
             ),
@@ -301,7 +307,7 @@ class rowingRest extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      CupertinoPageRoute(builder: (context) => LastScreen()));
+                      CupertinoPageRoute(builder: (context) => ThirdScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
                 shape: RoundedRectangleBorder(

@@ -441,7 +441,7 @@ class _aerobicState extends State<aerobic> {
        ),
       ),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(0),
+        padding: EdgeInsets.only(bottom: 0),
         child: RaisedButton(
           onPressed: () {
                      Navigator.push(
