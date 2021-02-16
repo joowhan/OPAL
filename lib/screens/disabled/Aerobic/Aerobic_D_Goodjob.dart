@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../../main.dart';
-import '../home.dart';
+import '../../../main.dart';
+import '../../home.dart';
 
 // ignore: camel_case_types
 class ADgoodjob extends StatelessWidget {

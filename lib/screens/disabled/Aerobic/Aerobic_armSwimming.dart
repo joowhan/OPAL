@@ -1,27 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:opalapp/screens/disabled/Aerobic_page.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_page.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_pushWall.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
 import 'Aerobic.dart';
-import 'package:opalapp/screens/disabled/Aerobic_bounce.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_bounce.dart';
 import 'package:cupertino_timer/cupertino_timer.dart';
 
-class aerobic_pushWall extends StatelessWidget {
+
+class aerobic_armSwimming extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: pushWall(),
+      home: armSwimming(),
     );
   }
 }
-
-class pushWall extends StatefulWidget {
+class armSwimming extends StatefulWidget {
   @override
-  _pushWallState createState() => _pushWallState();
+  _armSwimmingState createState() => _armSwimmingState();
 }
 
-class _pushWallState extends State<pushWall> {
+class _armSwimmingState extends State<armSwimming> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
@@ -76,7 +77,7 @@ class _pushWallState extends State<pushWall> {
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top:30.0),
+              padding: EdgeInsets.only(top:35.0),
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
@@ -111,7 +112,7 @@ class _pushWallState extends State<pushWall> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                        '벽 밀기',
+                        '팔 휘두르기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
@@ -133,6 +134,7 @@ class _pushWallState extends State<pushWall> {
                   ],
                 )
             ),
+
             //buttons
             Column(
               children: <Widget>[
@@ -171,7 +173,13 @@ class _pushWallState extends State<pushWall> {
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(builder: (context) => pushWallRest()));
+                              CupertinoPageRoute(builder: (context) => armSwimmingRest()));
+                          setState(() {
+                            // 영상이 재생 중이라면, 일시 중지 시킵니다.
+                            if (_controller.value.isPlaying) {
+                              _controller.pause();
+                            }
+                          });
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
@@ -231,7 +239,7 @@ var list1 = Column(
                         textAlign: TextAlign.left
                     ),
                     Text(
-                        '노 젓기',
+                        '벽 밀기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
@@ -250,7 +258,7 @@ var list1 = Column(
 );
 
 
-class pushWallRest extends StatelessWidget {
+class armSwimmingRest extends StatelessWidget {
   var done = false;
   @override
   Widget build(BuildContext context) {
@@ -290,7 +298,7 @@ class pushWallRest extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => FifthScreen()));
+                            builder: (context) => SecondScreen()));
                 },
               ),
             ),
@@ -301,7 +309,7 @@ class pushWallRest extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      CupertinoPageRoute(builder: (context) => FifthScreen()));
+                      CupertinoPageRoute(builder: (context) => pushWall()));
                   //Navigator.pushNamed(context, '/first');
                 },
                 shape: RoundedRectangleBorder(

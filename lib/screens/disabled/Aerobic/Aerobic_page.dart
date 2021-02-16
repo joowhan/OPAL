@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:opalapp/main.dart';
-import 'package:opalapp/screens/disabled/Aerobic_updown.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_updown.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
 
