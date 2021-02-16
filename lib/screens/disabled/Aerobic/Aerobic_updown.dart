@@ -36,8 +36,8 @@ class _updownState extends State<updown> {
   void initState() {
     // VideoPlayerController를 저장하기 위한 변수를 만들고 VideoPlayerController는
     // asset, 파일, 인터넷 등의 영상들을 제어하기 위해 다양한 생성자를 제공.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.asset(
+      'video/updown.mp4',
     );
 
     // 컨트롤러를 초기화하고 추후 사용하기 위해 Future를 변수에 할당합니다.
@@ -123,15 +123,37 @@ class _updownState extends State<updown> {
 
             Container(
                 margin: const EdgeInsets.all(65.0),
-                child: Column(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 100,
+                      height: 100,
+                      child:
+                      CupertinoTimer(
+                        duration: Duration(minutes: 1),
+                        startOnInit: true, //무조건 시작
+                        timeStyle: TextStyle(
+                            fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
+                        ringColor: Color(hexColor('#0E49B5')),
+                        ringStroke: 5,
+                        valueListener: (timeElapsed) {
+                          if (timeElapsed == Duration(minutes: 1))
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => updownRest()));
+                        },
+                      ),
+                    ),
                     Text(
                         '10 회',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left
                     ),
+
                   ],
                 )
             ),
