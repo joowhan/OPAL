@@ -147,8 +147,10 @@ class _updownState extends State<updown> {
                                     builder: (context) => updownRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다.
-                            if (_controller.value.isPlaying) {
-                              _controller.pause();
+                            if(timeElapsed == Duration(minutes: 1)){
+                              if (_controller.value.isPlaying) {
+                                _controller.pause();
+                              }
                             }
                           });
                         },
