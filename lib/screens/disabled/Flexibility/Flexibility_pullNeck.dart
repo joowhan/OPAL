@@ -42,6 +42,7 @@ class _pullNeckState extends State<pullNeck> {
     // 비디오를 반복 재생하기 위해 컨트롤러를 사용합니다.
     _controller.setLooping(true);
     _controller.play();
+
     super.initState();
   }
 
@@ -69,7 +70,7 @@ class _pullNeckState extends State<pullNeck> {
       body: Container(
         child: Column(
           children: <Widget>[
-            //Padding(padding: EdgeInsets.all(10.0)),
+            //Padding(padding: EdgeInsets.all(10.0))s,
             Container(
               padding: EdgeInsets.only(top: 35.0),
               height: (MediaQuery.of(context).size.height -
@@ -107,7 +108,9 @@ class _pullNeckState extends State<pullNeck> {
                   children: <Widget>[
                     Text('팔 위아래로 흔들기',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 40),
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
                         textAlign: TextAlign.left),
                   ],
                 )),
@@ -122,13 +125,12 @@ class _pullNeckState extends State<pullNeck> {
                       margin: EdgeInsets.all(10),
                       width: 100,
                       height: 100,
-                      child:
-                      CupertinoTimer( //추가된 운동화면 타이머
+                      child: CupertinoTimer(
+                        //추가된 운동화면 타이머
                         duration: Duration(seconds: 20),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
-                            fontFamily: 'Avenir Next',
-                            fontWeight: FontWeight.bold),
+                            fontFamily: "Gmarket", fontWeight: FontWeight.bold),
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
@@ -136,10 +138,10 @@ class _pullNeckState extends State<pullNeck> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => updownRest()));
+                                    builder: (context) => pullNeckRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
-                            if(timeElapsed == Duration(seconds: 20)){
+                            if (timeElapsed == Duration(seconds: 20)) {
                               if (_controller.value.isPlaying) {
                                 _controller.pause();
                               }
@@ -150,6 +152,7 @@ class _pullNeckState extends State<pullNeck> {
                     ),
                     Text('10 회',
                         style: TextStyle(
+                            fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
                             fontSize: 60,
                             color: Color(hexColor('#0E49B5'))),
@@ -194,7 +197,7 @@ class _pullNeckState extends State<pullNeck> {
                           Navigator.push(
                               context,
                               CupertinoPageRoute(
-                                  builder: (context) => updownRest()));
+                                  builder: (context) => pullNeckRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 눌렀을 때
                             if (_controller.value.isPlaying) {
@@ -211,7 +214,9 @@ class _pullNeckState extends State<pullNeck> {
                         textColor: Colors.white,
                         label: Text('완료',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 35)),
+                                fontFamily: "Gmarket",
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35)),
                         icon: Icon(Icons.arrow_forward_rounded,
                             size: 0, color: Colors.black54),
                       ),
@@ -256,11 +261,15 @@ var list1 = Column(
                   children: [
                     Text('다음 운동',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
                         textAlign: TextAlign.left),
                     Text('바운스',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 40),
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
                         textAlign: TextAlign.left),
                   ],
                 ),
@@ -276,7 +285,7 @@ var list1 = Column(
   ],
 );
 
-class updownRest extends StatelessWidget {
+class pullNeckRest extends StatelessWidget {
   var done = false;
   @override
   Widget build(BuildContext context) {
@@ -293,7 +302,9 @@ class updownRest extends StatelessWidget {
                   children: <Widget>[
                     Text('휴 식',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 70),
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 70),
                         textAlign: TextAlign.left),
                   ],
                 )),
@@ -301,12 +312,11 @@ class updownRest extends StatelessWidget {
               margin: EdgeInsets.all(10),
               width: 200,
               height: 200,
-              child:
-              CupertinoTimer(
+              child: CupertinoTimer(
                 duration: Duration(seconds: 20),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
+                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
@@ -332,8 +342,10 @@ class updownRest extends StatelessWidget {
                 splashColor: Colors.indigo,
                 textColor: Colors.black87,
                 label: Text('넘어가기',
-                    style:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
+                    style: TextStyle(
+                        fontFamily: "Gmarket",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),

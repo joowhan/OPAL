@@ -1,6 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:opalapp/screens/disabled/Flexibility/Flexibility_pullNeck.dart';
+import 'Flexibility_SpreadArms.dart';
+import 'Flexibility_Squeeze.dart';
+import 'Flexibility_backWaist.dart';
+import 'Flexibility_breathing.dart';
+import 'Flexibility_diagonalNeck.dart';
+import 'Flexibility_elbowsBackhead.dart';
+import 'Flexibility_elbowsToBody.dart';
+import 'Flexibility_pullNeckSide.dart';
 
 class flexibility_page extends StatefulWidget {
   @override
@@ -41,35 +49,16 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: (),
+      home: flexibility_pullNeckSide(),
     );
   }
 }
-/*
-class ThirdScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ThirdScreen'),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: Text('Go Third Screen'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/pushWall');
-          },
-        ),
-      ),
-    );
-  }
-}
-*/
+
 class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: aerobic_armSwimming(),
+      home: flexibility_diagonalNeck(),
     );
   }
 }
@@ -77,7 +66,7 @@ class FourthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: aerobic_pushWall(),
+      home: flexibility_spreadArms(),
     );
   }
 }
@@ -85,7 +74,7 @@ class FifthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: aerobic_rowing(),
+      home: flexibility_elbowsToBody(),
     );
   }
 }
@@ -93,7 +82,7 @@ class SixthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: aerobic_rowing(),
+      home: flexibility_elbowsBackhead(),
     );
   }
 }
@@ -102,7 +91,7 @@ class SeventhScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: aerobic_rowing(),
+      home: flexibility_squeeze(),
     );
   }
 }
@@ -111,7 +100,7 @@ class EighthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: aerobic_rowing(),
+      home: flexibility_backWaist(),
     );
   }
 }
@@ -120,7 +109,7 @@ class LastScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: aerobic_breathing(),
+      home: flexibility_breathing(),
     );
   }
 }
