@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'Aerobic_updown.dart';
-import 'Aerobic_page.dart';
+import '../Aerobic/Aerobic_updown.dart';
+import '../Aerobic/Aerobic_page.dart';
 
-class mstrength extends StatefulWidget {
+
+class Flexibility extends StatefulWidget {
   @override
-  _mstrengthState createState() => _mstrengthState();
+  _flexState createState() => _flexState();
 }
 
-class _mstrengthState extends State<mstrength> {
+class _flexState extends State<Flexibility> {
   @override
   Widget build(BuildContext context) {
     var goodjob = Column(
@@ -25,7 +26,7 @@ class _mstrengthState extends State<mstrength> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                        '유산소',
+                        '유연성',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
@@ -102,7 +103,7 @@ class _mstrengthState extends State<mstrength> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                        '손 모아 올리기',
+                        '목 앞으로 당기기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
@@ -153,7 +154,7 @@ class _mstrengthState extends State<mstrength> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                        '수평 팔 당기기',
+                        '목 옆으로 당기기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
@@ -204,7 +205,7 @@ class _mstrengthState extends State<mstrength> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                        '수직 팔 당기기',
+                        '목 대각선으로 당기기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
@@ -304,7 +305,7 @@ class _mstrengthState extends State<mstrength> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                        '깍지 끼고 뒤로 넘기기',
+                        '팔꿈치 몸통으로 당기기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
@@ -354,7 +355,7 @@ class _mstrengthState extends State<mstrength> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                        '아령 들기',
+                        '팔꿈치 머리 뒤로 당기기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                         textAlign: TextAlign.left
                     ),
@@ -367,6 +368,106 @@ class _mstrengthState extends State<mstrength> {
       ],
     );
     var list7 = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            Container(
+                padding: EdgeInsets.all(15),
+                height: 90,
+                width: 350,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 4,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[500],
+                      offset: Offset(4.0, 4.0),
+                      blurRadius: 15.0,
+                      spreadRadius: 1.0,
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-4.0, -4.0),
+                      blurRadius: 15.0,
+                      spreadRadius: 1.0,
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                margin: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Text(
+                        '깍지 끼고 내밀기',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        textAlign: TextAlign.left
+                    ),
+                  ],
+                )
+            )
+            // ),
+          ],
+        ),
+      ],
+    );
+    var list8 = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            Container(
+                padding: EdgeInsets.all(15),
+                height: 90,
+                width: 350,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 4,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[500],
+                      offset: Offset(4.0, 4.0),
+                      blurRadius: 15.0,
+                      spreadRadius: 1.0,
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-4.0, -4.0),
+                      blurRadius: 15.0,
+                      spreadRadius: 1.0,
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                margin: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Text(
+                        '허리 뒤로 팔꿈치 당기기',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        textAlign: TextAlign.left
+                    ),
+                  ],
+                )
+            )
+            // ),
+          ],
+        ),
+      ],
+    );
+    var list9 = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -455,7 +556,7 @@ class _mstrengthState extends State<mstrength> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.blue[900],
-          title: Text('근력 ',
+          title: Text('유연성 ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 35,
@@ -477,6 +578,8 @@ class _mstrengthState extends State<mstrength> {
                 list5,
                 list6,
                 list7,
+                list8,
+                list9,
                 //complete,
               ],
             ),
@@ -503,3 +606,4 @@ class _mstrengthState extends State<mstrength> {
     );
   }
 }
+

@@ -1,31 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:opalapp/screens/disabled/Aerobic_page.dart';
-import 'package:opalapp/screens/disabled/Aerobic_pushWall.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
 import 'Aerobic.dart';
-import 'package:opalapp/screens/disabled/Aerobic_bounce.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_page.dart';
+import 'package:opalapp/screens/disabled/Aerobic/Aerobic_bounce.dart';
 import 'package:cupertino_timer/cupertino_timer.dart';
 
 
-class aerobic_armSwimming extends StatelessWidget {
+class aerobic_updown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: armSwimming(),
+      home: updown(),
     );
   }
 }
-class armSwimming extends StatefulWidget {
+class updown extends StatefulWidget {
   @override
-  _armSwimmingState createState() => _armSwimmingState();
+  _updownState createState() => _updownState();
 }
-
-class _armSwimmingState extends State<armSwimming> {
+//동영상
+class _updownState extends State<updown> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   @override
+
   hexColor (String colorhexcode) {
     String colornew = '0xff' + colorhexcode;
     colornew = colornew.replaceAll('#', '');
@@ -77,7 +77,7 @@ class _armSwimmingState extends State<armSwimming> {
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top:30.0),
+              padding: EdgeInsets.only(top:35.0),
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
@@ -105,6 +105,7 @@ class _armSwimmingState extends State<armSwimming> {
               ),
 
             ),
+
             Container(
                 margin: const EdgeInsets.only(top: 80.0),
                 child: Column(
@@ -112,7 +113,7 @@ class _armSwimmingState extends State<armSwimming> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                        '팔 휘두르기',
+                        '팔 위아래로 흔들기',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
@@ -173,7 +174,14 @@ class _armSwimmingState extends State<armSwimming> {
                         onPressed: () {
                           Navigator.push(
                               context,
-                              CupertinoPageRoute(builder: (context) => armSwimmingRest()));
+                              CupertinoPageRoute(builder: (context) => updownRest()));
+                          setState(() {
+                            // 영상이 재생 중이라면, 일시 중지 시킵니다.
+                            if (_controller.value.isPlaying) {
+                              _controller.pause();
+                            }
+                          });
+
                           //Navigator.pushNamed(context, '/first');
                         },
                         shape: RoundedRectangleBorder(
@@ -233,7 +241,7 @@ var list1 = Column(
                         textAlign: TextAlign.left
                     ),
                     Text(
-                        '벽 밀기',
+                        '바운스',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
                         textAlign: TextAlign.left
                     ),
@@ -252,7 +260,7 @@ var list1 = Column(
 );
 
 
-class armSwimmingRest extends StatelessWidget {
+class updownRest extends StatelessWidget {
   var done = false;
   @override
   Widget build(BuildContext context) {
@@ -303,7 +311,7 @@ class armSwimmingRest extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      CupertinoPageRoute(builder: (context) => pushWall()));
+                      CupertinoPageRoute(builder: (context) => SecondScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
                 shape: RoundedRectangleBorder(
