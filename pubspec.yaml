@@ -78,6 +78,11 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - images/stars.png
+    - images/armSwimming.png
+    - images/bounce.png
+    - images/breathing.png
+    - images/pushWall.png
+    - images/rowing.png
     - video/updown.mp4
     - video/bounce.mp4
     - video/armSwimming.mp4

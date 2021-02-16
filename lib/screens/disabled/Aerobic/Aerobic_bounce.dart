@@ -242,14 +242,14 @@ var list1 = Column(
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 40),
+                            fontSize: 35),
                         textAlign: TextAlign.left),
                   ],
                 ),
                 SizedBox(
                   width: 20,
                 ),
-                Center(child: Image.asset('images/stars.png')),
+                Center(child: Image.asset('images/armSwimming.png')),
               ],
             ))
         // ),

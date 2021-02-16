@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
@@ -280,7 +280,7 @@ var list1 = Column(
                 SizedBox(
                   width: 20,
                 ),
-                Center(child: Image.asset('images/stars.png')),
+                Center(child: Image.asset('images/bounce.png')),
               ],
             ))
         // ),

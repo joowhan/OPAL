@@ -245,7 +245,7 @@ var list1 = Column(
                 ),
                 SizedBox(width: 20,
                 ),
-                Center(child: Image.asset('images/stars.png')),
+                Center(child: Image.asset('images/rowing.png')),
               ],
             )
         )
