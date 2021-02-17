@@ -90,6 +90,11 @@ flutter:
     - images/elbowsbackhead.png
     - images/squeeze.png
     - images/backwaist.png
+    - images/horizontalarmpull.png
+    - images/verticalarmpull.png
+    - images/spreadingbotharms.png
+    - images/kneakbackandturnback.png
+    - images/raisingdumbbells.png
     - video/updown.mp4
     - video/bounce.mp4
     - video/armSwimming.mp4
@@ -104,6 +109,12 @@ flutter:
     - video/elbowsbackhead.mp4
     - video/squeeze.mp4
     - video/backwaist.mp4
+    - video/climbinghands.mp4
+    - video/horizontalarmpull.mp4
+    - video/verticalarmpull.mp4
+    - video/spreadingbotharms.mp4
+    - video/kneakbackandturnback.mp4
+    - video/raisingdumbbells.mp4
 
   fonts:
     - family: Gmarket
