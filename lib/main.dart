@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: Colors.indigo,
+            selectedItemColor: Color(hexColor('153E90')),
             onTap: _onTap,
             currentIndex: _currentIndex,
             items: [

@@ -31,6 +31,12 @@ class myFitness extends StatefulWidget {
 class _myFitnessState extends State<myFitness> {
 
   @override
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
   Widget build(BuildContext context) {
 
     var titleSection1 = Row(
@@ -70,7 +76,7 @@ class _myFitnessState extends State<myFitness> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
                 color: Colors.white60,
-                splashColor: Colors.indigo,
+                splashColor: Color(hexColor('153E90')),
                 textColor: Colors.black87,
                 label: Text('유산소 ',
                     textAlign: TextAlign.left,
@@ -100,7 +106,7 @@ class _myFitnessState extends State<myFitness> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
                 color: Colors.white60,
-                splashColor: Colors.indigo,
+                splashColor: Color(hexColor('153E90')),
                 textColor: Colors.black87,
                 label: Text('유연성 ',
                     style:
@@ -129,7 +135,7 @@ class _myFitnessState extends State<myFitness> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
                 color: Colors.white60,
-                splashColor: Colors.indigo,
+                splashColor: Color(hexColor('153E90')),
                 textColor: Colors.black87,
                 label: Text('근력 ',
                     style:

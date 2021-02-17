@@ -187,7 +187,7 @@ class _breathingState extends State<breathing> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15.0))),
                         color: Color(hexColor('#0E49B5')),
-                        splashColor: Colors.indigo,
+                        splashColor: Color(hexColor('153E90')),
                         textColor: Colors.white,
                         label: Text('완료',
                             style: TextStyle(fontFamily: "Gmarket",

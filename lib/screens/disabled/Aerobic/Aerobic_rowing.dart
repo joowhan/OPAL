@@ -196,7 +196,7 @@ class _rowingState extends State<rowing> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(15.0))),
                         color: Color(hexColor('#0E49B5')),
-                        splashColor: Colors.indigo,
+                        splashColor: Color(hexColor('153E90')),
                         textColor: Colors.white,
                         label: Text('완료',
                             style:
@@ -335,7 +335,7 @@ class rowingRest extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0))),
                 color: Colors.white60,
-                splashColor: Colors.indigo,
+                splashColor: Color(hexColor('153E90')),
                 textColor: Colors.black87,
                 padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
                 label: Text('넘어가기',

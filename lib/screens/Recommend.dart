@@ -63,7 +63,7 @@ class _RecommendationState extends State<Recommendation> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
                 color: Colors.white60,
-                splashColor: Colors.indigo,
+                splashColor: Color(hexColor('153E90')),
                 textColor: Colors.black87,
                 label: Text('유산소 ',
                     textAlign: TextAlign.left,
@@ -93,7 +93,7 @@ class _RecommendationState extends State<Recommendation> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
                 color: Colors.white60,
-                splashColor: Colors.indigo,
+                splashColor: Color(hexColor('153E90')),
                 textColor: Colors.black87,
                 label: Text('유연성 ',
                     style:
@@ -122,7 +122,7 @@ class _RecommendationState extends State<Recommendation> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0))),
                 color: Colors.white60,
-                splashColor: Colors.indigo,
+                splashColor: Color(hexColor('153E90')),
                 textColor: Colors.black87,
                 label: Text('근력 ',
                     style:
