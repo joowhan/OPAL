@@ -76,7 +76,7 @@ class _pullNeckState extends State<pullNeck> {
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
-              width: 400,
+              width: 350,
               /*decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), //모서리를 둥글게
                   border: Border.all(color: Colors.black12, width: 3)),*/
@@ -101,7 +101,7 @@ class _pullNeckState extends State<pullNeck> {
             ),
 
             Container(
-                margin: const EdgeInsets.only(top: 80.0),
+                margin: const EdgeInsets.only(top: 90.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -125,13 +125,13 @@ class _pullNeckState extends State<pullNeck> {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 60,
+                            fontSize: 40,
                             color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left),
                     Container(
-                      margin: EdgeInsets.all(10),
-                      width: 100,
-                      height: 100,
+                      margin: EdgeInsets.only(left: 25),
+                      width: 150,
+                      height: 150,
                       child: CupertinoTimer(
                         //추가된 운동화면 타이머
                         duration: Duration(seconds: 20),
