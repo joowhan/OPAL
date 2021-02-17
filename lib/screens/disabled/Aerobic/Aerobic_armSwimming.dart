@@ -122,14 +122,43 @@ class _armSwimmingState extends State<armSwimming> {
 
             Container(
                 margin: const EdgeInsets.all(65.0),
-                child: Column(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                        '10 회',
+                        '15 회',
                         style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 60,color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 100,
+                      height: 100,
+                      child: CupertinoTimer(
+                        //추가된 운동화면 타이머
+                        duration: Duration(seconds: 25),
+                        startOnInit: true, //무조건 시작
+                        timeStyle: TextStyle(
+                            fontFamily: "Gmarket", fontWeight: FontWeight.normal),
+                        ringColor: Color(hexColor('#0E49B5')),
+                        ringStroke: 5,
+                        valueListener: (timeElapsed) {
+                          if (timeElapsed == Duration(seconds: 25))
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => armSwimmingRest()));
+                          setState(() {
+                            // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
+                            if (timeElapsed == Duration(seconds: 25)) {
+                              if (_controller.value.isPlaying) {
+                                _controller.pause();
+                              }
+                            }
+                          });
+                        },
+                      ),
                     ),
                   ],
                 )
@@ -145,26 +174,6 @@ class _armSwimmingState extends State<armSwimming> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    // Container( // 뒤로가기. 이 경우 리스트 화면을 간다.
-                    //   child:
-                    //   RaisedButton.icon(
-                    //     onPressed: () {
-                    //       Navigator.push(
-                    //           context,
-                    //           CupertinoPageRoute(builder: (context) => aerobic())); // 다시 리스트 화면으로 이동한다.
-                    //     },
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                    //     color: Colors.white60,
-                    //     splashColor: Colors.blue,
-                    //     textColor: Colors.black45,
-                    //     label: Text('', // 글자를 추가할 경우가 있음 지우지 말것
-                    //         style:
-                    //         TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-                    //     icon: Icon(Icons.arrow_back_rounded,
-                    //         size: 55, color: Colors.black54),
-                    //   ),
-                    // ),
                     Container( // 완료. 다음
                       height: 60,
                       width: 350,
@@ -247,7 +256,7 @@ var list1 = Column(
                 ),
                 SizedBox(width: 20,
                 ),
-                Center(child: Image.asset('images/stars.png')),
+                Center(child: Image.asset('images/pushWall.png')),
               ],
             )
         )
@@ -287,18 +296,18 @@ class armSwimmingRest extends StatelessWidget {
               height: 200,
               child:
               CupertinoTimer(
-                duration: Duration(minutes: 1),
+                duration: Duration(seconds: 20),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
                     fontFamily: 'Avenir Next', fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(minutes: 1))
+                  if (timeElapsed == Duration(seconds: 20))
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondScreen()));
+                            builder: (context) => FourthScreen()));
                 },
               ),
             ),
@@ -309,7 +318,7 @@ class armSwimmingRest extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      CupertinoPageRoute(builder: (context) => pushWall()));
+                      CupertinoPageRoute(builder: (context) => FourthScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
                 shape: RoundedRectangleBorder(
