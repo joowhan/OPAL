@@ -57,22 +57,12 @@ class _pullNeckState extends State<pullNeck> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.blue[800],
-      //   title: Text('유산소 ',style: TextStyle(
-      //     fontSize: 30,
-      //     fontWeight: FontWeight.bold
-      //   ),),
-      // ),
-      // VideoPlayerController가 초기화를 진행하는 동안 로딩 스피너를 보여주기 위해
-      // FutureBuilder를 사용합니다.
-
       body: Container(
         child: Column(
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0))s,
             Container(
-              padding: EdgeInsets.only(top: 35.0),
+              padding: EdgeInsets.only(top: 45.0),
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
@@ -101,7 +91,7 @@ class _pullNeckState extends State<pullNeck> {
             ),
 
             Container(
-                margin: const EdgeInsets.only(top: 90.0),
+                margin: const EdgeInsets.only(top: 65.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,7 +106,7 @@ class _pullNeckState extends State<pullNeck> {
                 )),
 
             Container(
-                margin: const EdgeInsets.all(50.0),
+                margin: const EdgeInsets.only(top : 65.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -192,6 +182,7 @@ class _pullNeckState extends State<pullNeck> {
                     //   ),
                     // ),
                     Container(
+                      margin: const EdgeInsets.only(top : 65.0),
                       // 완료. 다음
                       height: 60,
                       width: 350,
