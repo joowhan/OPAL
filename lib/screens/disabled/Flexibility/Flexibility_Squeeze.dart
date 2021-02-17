@@ -302,7 +302,7 @@ class squeezeRest extends StatelessWidget {
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(minutes: 1))
+                  if (timeElapsed == Duration(seconds: 20))
                     Navigator.push(
                         context,
                         MaterialPageRoute(
