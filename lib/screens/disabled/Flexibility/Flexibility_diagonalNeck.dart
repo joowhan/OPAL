@@ -33,7 +33,7 @@ class _diagonalNeckState extends State<diagonalNeck> {
     // VideoPlayerController를 저장하기 위한 변수를 만들고 VideoPlayerController는
     // asset, 파일, 인터넷 등의 영상들을 제어하기 위해 다양한 생성자를 제공.
     _controller = VideoPlayerController.asset(
-      'video/updown.mp4',
+      'video/diagonaneck.mp4',
     );
 
     // 컨트롤러를 초기화하고 추후 사용하기 위해 Future를 변수에 할당합니다.
@@ -284,7 +284,7 @@ var list1 = Column(
                 // SizedBox(
                 //   width: 20,
                 // ),
-                Center(child: Image.asset('images/bounce.png')),
+                Center(child: Image.asset('images/spreadarms.png')),
               ],
             ))
         // ),

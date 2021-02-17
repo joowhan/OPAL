@@ -83,12 +83,27 @@ flutter:
     - images/pushWall.png
     - images/rowing.png
     - images/breathing.png
+    - images/pullneckside.png
+    - images/diagonneck.png
+    - images/spreadarms.png
+    - images/elbowstobody.png
+    - images/elbowsbackhead.png
+    - images/squeeze.png
+    - images/backwaist.png
     - video/updown.mp4
     - video/bounce.mp4
     - video/armSwimming.mp4
     - video/pushWall.mp4
     - video/rowing.mp4
     - video/breathing.mp4
+    - video/pullneck.mp4
+    - video/pullneckside.mp4
+    - video/diagonaneck.mp4
+    - video/spreadarms.mp4
+    - video/elbowstobody.mp4
+    - video/elbowsbackhead.mp4
+    - video/squeeze.mp4
+    - video/backwaist.mp4
 
   fonts:
     - family: Gmarket
