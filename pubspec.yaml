@@ -79,6 +79,10 @@ flutter:
   assets:
     - images/stars.png
     - images/bounce.png
+    - images/armSwimming.png
+    - images/pushWall.png
+    - images/rowing.png
+    - images/breathing.png
     - video/updown.mp4
     - video/bounce.mp4
     - video/armSwimming.mp4

@@ -249,7 +249,7 @@ var list1 = Column(
                 SizedBox(
                   width: 20,
                 ),
-                Center(child: Image.asset('images/stars.png')),
+                Center(child: Image.asset('images/armSwimming.png')),
               ],
             )),
 
@@ -287,14 +287,14 @@ class bounceRest extends StatelessWidget {
               width: 200,
               height: 200,
               child: CupertinoTimer(
-                duration: Duration(seconds: 20),
+                duration: Duration(seconds: 30),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
                     fontFamily: "Gmarket", fontWeight: FontWeight.bold),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(seconds: 20))
+                  if (timeElapsed == Duration(seconds: 30))
                     Navigator.push(
                         context,
                         MaterialPageRoute(
