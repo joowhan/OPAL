@@ -246,7 +246,7 @@ var list1 = Column(
 
                   ],
                 ),
-                Center(child: Image.asset('images/bounce.png')),
+                Center(child: Image.asset('images/horizontalarmpull.png')),
               ],
             ))
       ],

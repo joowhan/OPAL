@@ -255,7 +255,7 @@ var list1 = Column(
                         textAlign: TextAlign.left),
                   ],
                 ),
-                Center(child: Image.asset('images/bounce.png')),
+                Center(child: Image.asset('images/spreadingbotharms.png')),
               ],
             ))
       ],

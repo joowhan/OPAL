@@ -67,7 +67,7 @@ class m_goodjob extends StatelessWidget {
                   children: <Widget>[
                     Text('''
     
-근 
+근력
 ''',
                         style: TextStyle(
                             fontFamily: "Gmarket",
@@ -96,7 +96,7 @@ class m_goodjob extends StatelessWidget {
 양팔 벌리기
 깍지 끼고 뒤로 넘기기
 아령 들기
-숨쉬
+숨쉬기
 
     ''',
                             style:

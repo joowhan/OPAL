@@ -244,21 +244,11 @@ var list1 = Column(
                             fontWeight: FontWeight.bold,
                             fontSize: 18),
                         textAlign: TextAlign.left),
-                    // Text('목 대각선으로 당기기',
-                    //     style: TextStyle(
-                    //         fontFamily: "Gmarket",
-                    //         fontWeight: FontWeight.bold,
-                    //         fontSize: 40),
-                    //     textAlign: TextAlign.left),
                   ],
                 ),
-                // SizedBox(
-                //   width: 20,
-                // ),
-                Center(child: Image.asset('images/bounce.png')),
+                Center(child: Image.asset('images/verticalarmpull.png')),
               ],
             ))
-        // ),
       ],
     ),
   ],
