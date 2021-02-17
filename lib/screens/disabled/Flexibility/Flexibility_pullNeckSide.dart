@@ -106,21 +106,29 @@ class _pullNeckSideState extends State<pullNeckSide> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('팔 위아래로 흔들기',
+                    Text('목 옆으로 당기기',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 40),
+                            fontSize: 33),
                         textAlign: TextAlign.left),
                   ],
                 )),
 
             Container(
-                margin: const EdgeInsets.all(65.0),
+                margin: const EdgeInsets.all(50.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+
+                    Text('10 회',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 60,
+                            color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left),
                     Container(
                       margin: EdgeInsets.all(10),
                       width: 100,
@@ -130,7 +138,10 @@ class _pullNeckSideState extends State<pullNeckSide> {
                         duration: Duration(seconds: 20),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
-                            fontFamily: "Gmarket", fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.black,
+                        ),
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
@@ -150,13 +161,6 @@ class _pullNeckSideState extends State<pullNeckSide> {
                         },
                       ),
                     ),
-                    Text('10 회',
-                        style: TextStyle(
-                            fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 60,
-                            color: Color(hexColor('#0E49B5'))),
-                        textAlign: TextAlign.left),
                   ],
                 )),
 
@@ -254,29 +258,34 @@ var list1 = Column(
             ),
             margin: const EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Column(
                   children: [
-                    Text('다음 운동',
+                    Text(
+                        '''
+다음 운동
+                        
+목 대각선으로 당기기
+''',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 18),
                         textAlign: TextAlign.left),
-                    Text('바운스',
-                        style: TextStyle(
-                            fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 40),
-                        textAlign: TextAlign.left),
+                    // Text('목 대각선으로 당기기',
+                    //     style: TextStyle(
+                    //         fontFamily: "Gmarket",
+                    //         fontWeight: FontWeight.bold,
+                    //         fontSize: 40),
+                    //     textAlign: TextAlign.left),
                   ],
                 ),
-                SizedBox(
-                  width: 20,
-                ),
-                Center(child: Image.asset('images/stars.png')),
+                // SizedBox(
+                //   width: 20,
+                // ),
+                Center(child: Image.asset('images/bounce.png')),
               ],
             ))
         // ),
@@ -295,7 +304,7 @@ class pullNeckSideRest extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-                margin: const EdgeInsets.only(top: 30.0),
+                margin: const EdgeInsets.only(top: 20.0, bottom: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -304,7 +313,7 @@ class pullNeckSideRest extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 70),
+                            fontSize: 60),
                         textAlign: TextAlign.left),
                   ],
                 )),
@@ -316,7 +325,10 @@ class pullNeckSideRest extends StatelessWidget {
                 duration: Duration(seconds: 20),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                  color: Colors.black,
+                ),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {

@@ -67,7 +67,7 @@ class F_goodjob extends StatelessWidget {
                   children: <Widget>[
                     Text('''
     
-유산소
+유연성 
 ''',
                         style: TextStyle(
                             fontFamily: "Gmarket",
@@ -90,12 +90,15 @@ class F_goodjob extends StatelessWidget {
                     // ),
                     Container(
                         child: Text('''
-팔 위아래로 흔들기 X 5 
-바운스 X 10
-팔 휘두르기 X 15
-벽 밀기 X 5
-노 젓기 X 10
-숨 쉬기 X 5
+목 앞으로 당기기
+목 옆으로 당기기
+목 대각선으로 당기기
+양팔 벌리기
+팔꿈치 몸통으로 당기기
+팔꿈치 머리 뒤로 당기기
+깍지 끼고 내밀기
+허리 뒤로 팔꿈치 당기기
+숨쉬기
 
     ''',
                             style:

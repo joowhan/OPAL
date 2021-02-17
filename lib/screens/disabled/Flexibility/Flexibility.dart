@@ -12,6 +12,14 @@ class Flexibility extends StatefulWidget {
 
 class _flexState extends State<Flexibility> {
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   Widget build(BuildContext context) {
     var goodjob = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -596,12 +604,13 @@ class _flexState extends State<Flexibility> {
                 context,
                 CupertinoPageRoute(builder: (context) => flexibility_page()));
           },
-          color: Colors.indigo[900],
+          color: Color(hexColor('#0E49B5')),
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           textColor: Colors.white,
           child: Text('시작하기',
               textAlign: TextAlign.left,
               style:
-              TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
+              TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
         ),
       ),
     );

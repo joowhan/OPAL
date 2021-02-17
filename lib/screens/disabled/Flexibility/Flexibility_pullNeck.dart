@@ -106,42 +106,52 @@ class _pullNeckState extends State<pullNeck> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('팔 위아래로 흔들기',
+                    Text('목 앞으로 당기기',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 40),
+                            fontSize: 33),
                         textAlign: TextAlign.left),
                   ],
                 )),
 
             Container(
-                margin: const EdgeInsets.all(65.0),
+                margin: const EdgeInsets.all(50.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                    Text('10 회',
+                        style: TextStyle(
+                            fontFamily: "Gmarket",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 60,
+                            color: Color(hexColor('#0E49B5'))),
+                        textAlign: TextAlign.left),
                     Container(
                       margin: EdgeInsets.all(10),
                       width: 100,
                       height: 100,
                       child: CupertinoTimer(
                         //추가된 운동화면 타이머
-                        duration: Duration(seconds: 20),
+                        duration: Duration(seconds: 100),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
-                            fontFamily: "Gmarket", fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.black,
+                        ),
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
-                          if (timeElapsed == Duration(seconds: 20))
+                          if (timeElapsed == Duration(seconds: 100))
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => pullNeckRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
-                            if (timeElapsed == Duration(seconds: 20)) {
+                            if (timeElapsed == Duration(seconds: 100)) {
                               if (_controller.value.isPlaying) {
                                 _controller.pause();
                               }
@@ -150,13 +160,6 @@ class _pullNeckState extends State<pullNeck> {
                         },
                       ),
                     ),
-                    Text('10 회',
-                        style: TextStyle(
-                            fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 60,
-                            color: Color(hexColor('#0E49B5'))),
-                        textAlign: TextAlign.left),
                   ],
                 )),
 
@@ -254,29 +257,37 @@ var list1 = Column(
             ),
             margin: const EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Column(
                   children: [
-                    Text('다음 운동',
+                    Text(
+                        '''
+다음 운동
+                        
+목 옆으로 당기기 
+''',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 18),
                         textAlign: TextAlign.left),
-                    Text('바운스',
-                        style: TextStyle(
-                            fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 40),
-                        textAlign: TextAlign.left),
+//                  Text(
+//                         '''
+// 바운스
+// ''',
+//                         style: TextStyle(
+//                             fontFamily: "Gmarket",
+//                             fontWeight: FontWeight.bold,
+//                             fontSize: 12),
+//                         textAlign: TextAlign.left),
                   ],
                 ),
-                SizedBox(
-                  width: 20,
-                ),
-                Center(child: Image.asset('images/stars.png')),
+                // SizedBox(
+                //   width: 80,
+                // ),
+                Center(child: Image.asset('images/bounce.png')),
               ],
             ))
         // ),
@@ -295,7 +306,7 @@ class pullNeckRest extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-                margin: const EdgeInsets.only(top: 30.0),
+                margin: const EdgeInsets.only(top: 20.0, bottom: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -304,7 +315,7 @@ class pullNeckRest extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 70),
+                            fontSize: 60),
                         textAlign: TextAlign.left),
                   ],
                 )),
@@ -316,11 +327,14 @@ class pullNeckRest extends StatelessWidget {
                 duration: Duration(seconds: 20),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40,
+                    color: Colors.black,
+                ),
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(minutes: 1))
+                  if (timeElapsed == Duration(seconds: 20))
                     Navigator.push(
                         context,
                         MaterialPageRoute(

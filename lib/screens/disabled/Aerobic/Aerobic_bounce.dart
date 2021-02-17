@@ -298,7 +298,7 @@ class bounceRest extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondScreen()));
+                            builder: (context) => ThirdScreen()));
                 },
               ),
             ),
