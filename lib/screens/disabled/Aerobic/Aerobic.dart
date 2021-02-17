@@ -60,7 +60,7 @@ class _aerobicState extends State<aerobic> {
                   children: <Widget>[
                     Icon(Icons.schedule, size: 25),
                     Text(
-                        ' 20분',
+                        ' 10분',
                         style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.left
                     ),
