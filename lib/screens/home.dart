@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
             Container(
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom)*0.29,
+                  MediaQuery.of(context).padding.bottom)*0.27,
               width: 350,
               child:
               RaisedButton.icon(
@@ -69,13 +69,13 @@ class _HomeState extends State<Home> {
 
           ],
         ), //하나의 함수로 묶어서 쓰면 좋다.
-        Padding(padding: EdgeInsets.all(20.0)),
+        Padding(padding: EdgeInsets.all(30.0)),
         Column(
           children: <Widget>[
             Container(
               height:(MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
-                  MediaQuery.of(context).padding.bottom)*0.29,
+                  MediaQuery.of(context).padding.bottom)*0.27,
               width: 350,
               child:
               RaisedButton.icon(

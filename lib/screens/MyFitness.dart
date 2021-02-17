@@ -148,12 +148,10 @@ class _myFitnessState extends State<myFitness> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.blue[900],
-          title: Text('노인 운동 ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 35,
-                color: Colors.white,
-              ))),
+          title: Text('노인 운동',
+
+              style: TextStyle(fontFamily: "Gmarket", fontSize: 23, fontWeight: FontWeight.bold)
+          )),
       body: Center(
           child: ListView(
             children: <Widget>[

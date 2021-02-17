@@ -54,7 +54,7 @@ class _flexState extends State<Flexibility> {
         Column(
           children: <Widget>[
             Container(
-                padding: EdgeInsets.only(left: 35, top: 10),
+                padding: EdgeInsets.only(left: 10, top: 10),
                 //margin: const EdgeInsets.all(20.0),
                 child: Row(
                   //mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +113,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '목 앞으로 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -164,7 +164,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '목 옆으로 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -215,7 +215,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '목 대각선으로 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -265,7 +265,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '양팔 벌리기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -315,7 +315,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '팔꿈치 몸통으로 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -365,7 +365,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '팔꿈치 머리 뒤로 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -415,7 +415,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '깍지 끼고 내밀기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -465,7 +465,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '허리 뒤로 팔꿈치 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -515,7 +515,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Text(
                         '숨쉬기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket", fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -565,12 +565,10 @@ class _flexState extends State<Flexibility> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.blue[900],
-          title: Text('유연성 ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 35,
-                color: Colors.white,
-              ))),
+          title: Text('유연성',
+
+              style: TextStyle(fontFamily: "Gmarket", fontSize: 23, fontWeight: FontWeight.bold)
+          )),
       body: Center(
         child: ListView(
           children: <Widget>[
@@ -605,7 +603,7 @@ class _flexState extends State<Flexibility> {
                 CupertinoPageRoute(builder: (context) => flexibility_page()));
           },
           color: Color(hexColor('#0E49B5')),
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
           textColor: Colors.white,
           child: Text('시작하기',
               textAlign: TextAlign.left,
