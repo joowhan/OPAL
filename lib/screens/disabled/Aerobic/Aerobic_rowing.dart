@@ -120,7 +120,7 @@ class _rowingState extends State<rowing> {
 
             Container(
                 margin: const EdgeInsets.all(65.0),
-                child: Column(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
