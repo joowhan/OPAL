@@ -111,7 +111,7 @@ class _pullNeckState extends State<pullNeck> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('10 회',
+                    Text('10 초',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
@@ -124,7 +124,7 @@ class _pullNeckState extends State<pullNeck> {
                       height: 150,
                       child: CupertinoTimer(
                         //추가된 운동화면 타이머
-                        duration: Duration(seconds: 20),
+                        duration: Duration(seconds: 60),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -134,14 +134,14 @@ class _pullNeckState extends State<pullNeck> {
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
-                          if (timeElapsed == Duration(seconds: 20))
+                          if (timeElapsed == Duration(seconds: 60))
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => pullNeckRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
-                            if (timeElapsed == Duration(seconds: 20)) {
+                            if (timeElapsed == Duration(seconds: 60)) {
                               if (_controller.value.isPlaying) {
                                 _controller.pause();
                               }
@@ -322,7 +322,7 @@ class pullNeckRest extends StatelessWidget {
               width: 200,
               height: 200,
               child: CupertinoTimer(
-                duration: Duration(seconds: 20),
+                duration: Duration(seconds: 10),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -332,7 +332,7 @@ class pullNeckRest extends StatelessWidget {
                 ringColor: Color(hexColor('#0E49B5')),
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(seconds: 20))
+                  if (timeElapsed == Duration(seconds: 10))
                     Navigator.push(
                         context,
                         MaterialPageRoute(

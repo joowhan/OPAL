@@ -33,7 +33,7 @@ class _mstrengthState extends State<mstrength> {
                   children: <Widget>[
                     Icon(Icons.schedule, size: 25),
                     Text(
-                        ' 20분',
+                        ' 15분',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.left
                     ),

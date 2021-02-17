@@ -125,7 +125,7 @@ class _raisingdumbbellsState extends State<raisingdumbbells> {
                       height: 150,
                       child: CupertinoTimer(
                         //추가된 운동화면 타이머
-                        duration: Duration(seconds: 20),
+                        duration: Duration(seconds: 60),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -135,14 +135,14 @@ class _raisingdumbbellsState extends State<raisingdumbbells> {
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
-                          if (timeElapsed == Duration(seconds: 20))
+                          if (timeElapsed == Duration(seconds: 60))
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => raisingdumbbellsRest()));
                           setState(() {
                             // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
-                            if (timeElapsed == Duration(seconds: 20)) {
+                            if (timeElapsed == Duration(seconds: 60)) {
                               if (_controller.value.isPlaying) {
                                 _controller.pause();
                               }
@@ -289,7 +289,7 @@ class raisingdumbbellsRest extends StatelessWidget {
               width: 200,
               height: 200,
               child: CupertinoTimer(
-                duration: Duration(seconds: 20),
+                duration: Duration(seconds: 30),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -299,7 +299,7 @@ class raisingdumbbellsRest extends StatelessWidget {
                 ringColor: Color(hexColor('#0E49B5')),
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(minutes: 1))
+                  if (timeElapsed == Duration(seconds: 30))
                     Navigator.push(
                         context,
                         MaterialPageRoute(

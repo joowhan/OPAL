@@ -59,7 +59,7 @@ class _flexState extends State<Flexibility> {
                   children: <Widget>[
                     Icon(Icons.schedule, size: 25),
                     Text(
-                        ' 20분',
+                        ' 10분',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.left
                     ),
