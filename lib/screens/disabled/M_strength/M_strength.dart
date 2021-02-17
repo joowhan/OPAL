@@ -9,6 +9,14 @@ class mstrength extends StatefulWidget {
 
 class _mstrengthState extends State<mstrength> {
   @override
+
+  hexColor (String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   Widget build(BuildContext context) {
     var time = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -17,7 +25,7 @@ class _mstrengthState extends State<mstrength> {
         Column(
           children: <Widget>[
             Container(
-                padding: EdgeInsets.only(left: 35, top: 10),
+                padding: EdgeInsets.only(left: 10, top: 10),
                 //margin: const EdgeInsets.all(20.0),
                 child: Row(
                   //mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +84,7 @@ class _mstrengthState extends State<mstrength> {
                   children: <Widget>[
                     Text(
                         '손 모아 올리기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -127,7 +135,7 @@ class _mstrengthState extends State<mstrength> {
                   children: <Widget>[
                     Text(
                         '수평 팔 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -178,7 +186,7 @@ class _mstrengthState extends State<mstrength> {
                   children: <Widget>[
                     Text(
                         '수직 팔 당기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -228,7 +236,7 @@ class _mstrengthState extends State<mstrength> {
                   children: <Widget>[
                     Text(
                         '양팔 벌리기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -277,8 +285,8 @@ class _mstrengthState extends State<mstrength> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Text(
-                        '깍지 끼고 뒤로 넘기기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        '깍지끼고 뒤로 넘기기',
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -328,7 +336,7 @@ class _mstrengthState extends State<mstrength> {
                   children: <Widget>[
                     Text(
                         '아령 들기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -378,7 +386,7 @@ class _mstrengthState extends State<mstrength> {
                   children: <Widget>[
                     Text(
                         '숨쉬기',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                        style: TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 28),
                         textAlign: TextAlign.left
                     ),
                   ],
@@ -392,13 +400,11 @@ class _mstrengthState extends State<mstrength> {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue[900],
-          title: Text('근력 ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 35,
-                color: Colors.white,
-              ))),
+          backgroundColor: Color(hexColor('153E90')),
+          title: Text('근력',
+
+              style: TextStyle(fontFamily: "Gmarket", fontSize: 23, fontWeight: FontWeight.bold)
+          )),
       body: Center(
         child: ListView(
           children: <Widget>[
@@ -430,12 +436,14 @@ class _mstrengthState extends State<mstrength> {
                 context,
                 CupertinoPageRoute(builder: (context) => M_page()));
           },
-          color: Colors.indigo[900],
+          color: Color(hexColor('#0E49B5')),
+          padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
           textColor: Colors.white,
           child: Text('시작하기',
               textAlign: TextAlign.left,
               style:
-              TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
+
+              TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),
         ),
       ),
     );

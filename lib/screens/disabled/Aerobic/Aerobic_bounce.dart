@@ -66,11 +66,11 @@ class _bounceState extends State<bounce> {
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top: 30.0),
+              padding: EdgeInsets.only(top: 45.0),
               height: (MediaQuery.of(context).size.height -
                       MediaQuery.of(context).padding.top) *
                   0.4,
-              width: 400,
+              width: 350,
               /*decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), //모서리를 둥글게
                   border: Border.all(color: Colors.black12, width: 3)),*/
@@ -94,7 +94,7 @@ class _bounceState extends State<bounce> {
               ),
             ),
             Container(
-                margin: const EdgeInsets.only(top: 80.0),
+                margin: const EdgeInsets.only(top: 65.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -103,13 +103,13 @@ class _bounceState extends State<bounce> {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 40),
+                            fontSize: 33),
                         textAlign: TextAlign.left),
                   ],
                 )),
 
             Container(
-                margin: const EdgeInsets.all(65.0),
+                margin: const EdgeInsets.only(top: 65.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,19 +118,22 @@ class _bounceState extends State<bounce> {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 60,
+                            fontSize: 40,
                             color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left),
                     Container(
-                      margin: EdgeInsets.all(10),
-                      width: 100,
-                      height: 100,
+                      margin: EdgeInsets.only(left: 25),
+                      width: 150,
+                      height: 150,
                       child: CupertinoTimer(
                         //추가된 운동화면 타이머
                         duration: Duration(seconds: 30),
                         startOnInit: true, //무조건 시작
                         timeStyle: TextStyle(
-                            fontFamily: "Gmarket", fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.black,
+                        ),
                         ringColor: Color(hexColor('#0E49B5')),
                         ringStroke: 5,
                         valueListener: (timeElapsed) {
@@ -162,6 +165,7 @@ class _bounceState extends State<bounce> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
+                      margin: const EdgeInsets.only(top: 65.0),
                       // 완료. 다음
                       height: 60,
                       width: 350,
@@ -227,27 +231,23 @@ var list1 = Column(
             ),
             margin: const EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Column(
                   children: [
-                    Text('다음 운동',
+                    Text(
+                        '''
+다음 운동
+                        
+팔 휘두르기 
+''',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                        textAlign: TextAlign.left),
-                    Text('팔 휘두르기',
-                        style: TextStyle(
-                            fontFamily: "Gmarket",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 40),
+                            fontSize: 18),
                         textAlign: TextAlign.left),
                   ],
-                ),
-                SizedBox(
-                  width: 20,
                 ),
                 Center(child: Image.asset('images/armSwimming.png')),
               ],
@@ -262,6 +262,12 @@ var list1 = Column(
 class bounceRest extends StatelessWidget {
   var done = false;
   @override
+  hexColor(String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -269,7 +275,7 @@ class bounceRest extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-                margin: const EdgeInsets.only(top: 30.0),
+                margin: const EdgeInsets.only(top: 20.0, bottom: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -278,7 +284,7 @@ class bounceRest extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 70),
+                            fontSize: 60),
                         textAlign: TextAlign.left),
                   ],
                 )),
@@ -290,8 +296,11 @@ class bounceRest extends StatelessWidget {
                 duration: Duration(seconds: 30),
                 startOnInit: true, //무조건 시작
                 timeStyle: TextStyle(
-                    fontFamily: "Gmarket", fontWeight: FontWeight.bold),
-                ringColor: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                  color: Colors.black,
+                ),
+                ringColor: Color(hexColor('#0E49B5')),
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
                   if (timeElapsed == Duration(seconds: 30))
@@ -315,6 +324,7 @@ class bounceRest extends StatelessWidget {
                 color: Colors.white60,
                 splashColor: Colors.indigo,
                 textColor: Colors.black87,
+                padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
                 label: Text('넘어가기',
                     style:
                         TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 40)),

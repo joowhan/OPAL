@@ -62,11 +62,11 @@ class _kneakbackandturnbackState extends State<kneakbackandturnback> {
         child: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(top: 35.0),
+              padding: EdgeInsets.only(top: 45.0),
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
-              width: 400,
+              width: 350,
               child: FutureBuilder(
                 future: _initializeVideoPlayerFuture,
                 builder: (context, snapshot) {
@@ -88,7 +88,7 @@ class _kneakbackandturnbackState extends State<kneakbackandturnback> {
             ),
 
             Container(
-                margin: const EdgeInsets.only(top: 80.0),
+                margin: const EdgeInsets.only(top: 65.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -102,7 +102,7 @@ class _kneakbackandturnbackState extends State<kneakbackandturnback> {
                   ],
                 )),
             Container(
-                margin: const EdgeInsets.all(50.0),
+                margin: const EdgeInsets.only(top: 65.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -111,13 +111,13 @@ class _kneakbackandturnbackState extends State<kneakbackandturnback> {
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 60,
+                            fontSize: 40,
                             color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left),
                     Container(
-                      margin: EdgeInsets.all(10),
-                      width: 100,
-                      height: 100,
+                      margin: EdgeInsets.only(left: 25),
+                      width: 150,
+                      height: 150,
                       child: CupertinoTimer(
                         //추가된 운동화면 타이머
                         duration: Duration(seconds: 20),
@@ -159,6 +159,7 @@ class _kneakbackandturnbackState extends State<kneakbackandturnback> {
                   children: <Widget>[
                     Container(
                       // 완료. 다음
+                      margin: const EdgeInsets.only(top: 65.0),
                       height: 60,
                       width: 350,
                       child: RaisedButton.icon(
@@ -249,6 +250,12 @@ var list1 = Column(
 class kneakbackandturnbackRest extends StatelessWidget {
   var done = false;
   @override
+  hexColor(String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -281,7 +288,7 @@ class kneakbackandturnbackRest extends StatelessWidget {
                   fontSize: 40,
                   color: Colors.black,
                 ),
-                ringColor: Colors.blue,
+                ringColor: Color(hexColor('#0E49B5')),
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
                   if (timeElapsed == Duration(minutes: 1))
@@ -305,6 +312,7 @@ class kneakbackandturnbackRest extends StatelessWidget {
                 color: Colors.white60,
                 splashColor: Colors.indigo,
                 textColor: Colors.black87,
+                padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
                 label: Text('넘어가기',
                     style: TextStyle(
                         fontFamily: "Gmarket",

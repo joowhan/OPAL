@@ -94,12 +94,12 @@ class ADgoodjob extends StatelessWidget {
                     Container(
                       child: Text(
     '''
-팔 위아래로 흔들기 X 5 
-바운스 X 10
-팔 휘두르기 X 15
-벽 밀기 X 5
-노 젓기 X 10
-숨 쉬기 X 5
+팔 위아래로 흔들기 
+바운스 
+팔 휘두르기 
+벽 밀기
+노 젓기 
+숨 쉬기
 
     ''',
                           style: TextStyle(fontFamily: "Gmarket",fontSize: 20),
@@ -108,7 +108,32 @@ class ADgoodjob extends StatelessWidget {
                     )
                   ],
                   )
-                )
+                ),
+            Container(
+              margin: EdgeInsets.only(top: 90),
+              // 완료. 다음
+              height: 60,
+              width: 350,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    //push를 눌렀을 때 edit로 넘어가
+                      context,
+                      CupertinoPageRoute(builder: (context) => MyHomePage()));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius:
+                    BorderRadius.all(Radius.circular(15.0))),
+                color: Color(hexColor('#0E49B5')),
+                textColor: Colors.white,
+                child: Text('완료',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: "Gmarket",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35)),
+              ),
+            ),
                 // ),
           ],
           ),
@@ -129,24 +154,6 @@ class ADgoodjob extends StatelessWidget {
             ),
           ],
         )
-      ),
-
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(0),
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-              //push를 눌렀을 때 edit로 넘어가
-                context,
-                CupertinoPageRoute(builder: (context) => MyHomePage()));
-          },
-          color: Color(hexColor('#0E49B5')),
-          textColor: Colors.white,
-          child: Text('완료',
-              textAlign: TextAlign.left,
-              style:
-              TextStyle(fontFamily: "Gmarket",fontWeight: FontWeight.bold, fontSize: 45)),
-        ),
       ),
     );
   }

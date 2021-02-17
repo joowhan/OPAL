@@ -561,7 +561,7 @@ class _flexState extends State<Flexibility> {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Color(hexColor('153E90')),
           title: Text('유연성',
 
               style: TextStyle(fontFamily: "Gmarket", fontSize: 23, fontWeight: FontWeight.bold)

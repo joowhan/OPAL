@@ -103,7 +103,32 @@ class m_goodjob extends StatelessWidget {
                             TextStyle(fontFamily: "Gmarket", fontSize: 20),
                             textAlign: TextAlign.left))
                   ],
-                ))
+                )),
+            Container(
+              margin: EdgeInsets.only(top: 65),
+              // 완료. 다음
+              height: 60,
+              width: 350,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    //push를 눌렀을 때 edit로 넘어가
+                      context,
+                      CupertinoPageRoute(builder: (context) => MyHomePage()));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius:
+                    BorderRadius.all(Radius.circular(15.0))),
+                color: Color(hexColor('#0E49B5')),
+                textColor: Colors.white,
+                child: Text('완료',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: "Gmarket",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35)),
+              ),
+            ),
             // ),
           ],
         ),
@@ -124,25 +149,6 @@ class m_goodjob extends StatelessWidget {
               ),
             ],
           )),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(0),
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-              //push를 눌렀을 때 edit로 넘어가
-                context,
-                CupertinoPageRoute(builder: (context) => MyHomePage()));
-          },
-          color: Color(hexColor('#0E49B5')),
-          textColor: Colors.white,
-          child: Text('완료',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  fontFamily: "Gmarket",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 45)),
-        ),
-      ),
     );
   }
 }

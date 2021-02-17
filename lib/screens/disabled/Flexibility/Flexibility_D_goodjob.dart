@@ -93,7 +93,7 @@ class F_goodjob extends StatelessWidget {
                   ],
                 )),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: 15),
               // 완료. 다음
               height: 60,
               width: 350,

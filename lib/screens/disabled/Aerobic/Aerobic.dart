@@ -412,7 +412,7 @@ class _aerobicState extends State<aerobic> {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue[900],
+          backgroundColor: Color(hexColor('153E90')),
           title: Text('유산소',
 
               style: TextStyle(fontFamily: "Gmarket", fontSize: 23, fontWeight: FontWeight.bold)

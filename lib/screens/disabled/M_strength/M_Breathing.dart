@@ -64,11 +64,11 @@ class _breathingState extends State<breathing> {
           children: <Widget>[
             //Padding(padding: EdgeInsets.all(10.0)),
             Container(
-              padding: EdgeInsets.only(top: 35.0),
+              padding: EdgeInsets.only(top: 45.0),
               height: (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top) *
                   0.4,
-              width: 400,
+              width: 350,
               /*decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), //모서리를 둥글게
                   border: Border.all(color: Colors.black12, width: 3)),*/
@@ -92,7 +92,7 @@ class _breathingState extends State<breathing> {
               ),
             ),
             Container(
-                margin: const EdgeInsets.only(top: 80.0),
+                margin: const EdgeInsets.only(top: 65.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,17 +105,49 @@ class _breathingState extends State<breathing> {
                 )),
 
             Container(
-                margin: const EdgeInsets.all(65.0),
-                child: Column(
+                margin: const EdgeInsets.only(top: 65.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text('10 회',
                         style: TextStyle(fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
-                            fontSize: 60,
+                            fontSize: 40,
                             color: Color(hexColor('#0E49B5'))),
                         textAlign: TextAlign.left),
+                    Container(
+                      margin: EdgeInsets.only(left: 25),
+                      width: 150,
+                      height: 150,
+                      child: CupertinoTimer(
+                        //추가된 운동화면 타이머
+                        duration: Duration(seconds: 20),
+                        startOnInit: true, //무조건 시작
+                        timeStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Colors.black,
+                        ),
+                        ringColor: Color(hexColor('#0E49B5')),
+                        ringStroke: 5,
+                        valueListener: (timeElapsed) {
+                          if (timeElapsed == Duration(seconds: 20))
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => m_goodjob()));
+                          setState(() {
+                            // 영상이 재생 중이라면, 일시 중지 시킵니다. 버튼을 누르지 않았을 때
+                            if (timeElapsed == Duration(seconds: 20)) {
+                              if (_controller.value.isPlaying) {
+                                _controller.pause();
+                              }
+                            }
+                          });
+                        },
+                      ),
+                    ),
                   ],
                 )),
 
@@ -128,6 +160,7 @@ class _breathingState extends State<breathing> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
+                      margin: const EdgeInsets.only(top: 65.0),
                       // 완료. 다음
                       height: 60,
                       width: 350,
