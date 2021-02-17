@@ -255,7 +255,7 @@ var list1 = Column(
                 // SizedBox(
                 //   width: 20,
                 // ),
-                Center(child: Image.asset('images/bounce.png')),
+                Center(child: Image.asset('images/breathing.png')),
               ],
             ))
         // ),
@@ -302,7 +302,7 @@ class backWaistRest extends StatelessWidget {
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(minutes: 1))
+                  if (timeElapsed == Duration(seconds: 20))
                     Navigator.push(
                         context,
                         MaterialPageRoute(
