@@ -448,7 +448,7 @@ class _aerobicState extends State<aerobic> {
                          CupertinoPageRoute(builder: (context) => aerobic_page()));
                    },
           color: Color(hexColor('#0E49B5')),
-          padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+          padding: EdgeInsets.fromLTRB(10, 15, 10, 20),
           textColor: Colors.white,
 
           child: Text('시작하기',

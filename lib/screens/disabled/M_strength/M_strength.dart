@@ -437,7 +437,7 @@ class _mstrengthState extends State<mstrength> {
                 CupertinoPageRoute(builder: (context) => M_page()));
           },
           color: Color(hexColor('#0E49B5')),
-          padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+          padding: EdgeInsets.fromLTRB(10, 15, 10, 20),
           textColor: Colors.white,
           child: Text('시작하기',
               textAlign: TextAlign.left,
