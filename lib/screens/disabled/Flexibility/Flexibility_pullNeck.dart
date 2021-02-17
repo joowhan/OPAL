@@ -299,6 +299,13 @@ var list1 = Column(
 class pullNeckRest extends StatelessWidget {
   var done = false;
   @override
+  hexColor(String colorhexcode) {
+    String colornew = '0xff' + colorhexcode;
+    colornew = colornew.replaceAll('#', '');
+    int colorint = int.parse(colornew);
+    return colorint;
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -331,7 +338,7 @@ class pullNeckRest extends StatelessWidget {
                     fontSize: 40,
                     color: Colors.black,
                 ),
-                ringColor: Colors.blue,
+                ringColor: Color(hexColor('#0E49B5')),
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
                   if (timeElapsed == Duration(seconds: 20))
@@ -355,11 +362,12 @@ class pullNeckRest extends StatelessWidget {
                 color: Colors.white60,
                 splashColor: Colors.indigo,
                 textColor: Colors.black87,
+                padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
                 label: Text('넘어가기',
                     style: TextStyle(
                         fontFamily: "Gmarket",
                         fontWeight: FontWeight.bold,
-                        fontSize: 40)),
+                        fontSize: 35)),
                 icon: Icon(Icons.arrow_forward_rounded,
                     size: 0, color: Colors.black54),
               ),

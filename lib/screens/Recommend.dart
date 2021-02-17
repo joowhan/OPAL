@@ -141,12 +141,10 @@ class _RecommendationState extends State<Recommendation> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Color(hexColor('#153E90')),
-          title: Text('휠체어 운동 ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 28,
-                color: Colors.white,
-              ))),
+          title: Text('휠체어 운동',
+
+              style: TextStyle(fontFamily: "Gmarket", fontSize: 23, fontWeight: FontWeight.bold)
+          )),
       body: Center(
           child: ListView(
         children: <Widget>[

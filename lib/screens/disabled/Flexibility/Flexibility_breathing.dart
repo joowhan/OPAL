@@ -105,7 +105,7 @@ class _breathingState extends State<breathing> {
                 )),
 
             Container(
-                margin: const EdgeInsets.all(65.0),
+                margin: const EdgeInsets.all(50.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

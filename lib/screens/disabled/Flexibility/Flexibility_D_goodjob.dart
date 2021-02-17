@@ -67,27 +67,13 @@ class F_goodjob extends StatelessWidget {
                   children: <Widget>[
                     Text('''
     
-유연성 
+유연성
 ''',
                         style: TextStyle(
                             fontFamily: "Gmarket",
                             fontWeight: FontWeight.bold,
                             fontSize: 25),
                         textAlign: TextAlign.left),
-                    // Container(
-                    //     margin: const EdgeInsets.symmetric(horizontal: 50.0),
-                    //     alignment: Alignment.center,
-                    //     child: Row(
-                    //       children: <Widget>[
-                    //         Icon(Icons.schedule, size: 30),
-                    //         Text(
-                    //             ' 30분',
-                    //             style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-                    //             textAlign: TextAlign.center
-                    //         )
-                    //       ]
-                    //     )
-                    // ),
                     Container(
                         child: Text('''
 목 앞으로 당기기
@@ -103,10 +89,34 @@ class F_goodjob extends StatelessWidget {
     ''',
                             style:
                                 TextStyle(fontFamily: "Gmarket", fontSize: 20),
-                            textAlign: TextAlign.left))
+                            textAlign: TextAlign.left)),
                   ],
-                ))
-            // ),
+                )),
+            Container(
+              margin: EdgeInsets.all(10),
+              // 완료. 다음
+              height: 60,
+              width: 350,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    //push를 눌렀을 때 edit로 넘어가
+                      context,
+                      CupertinoPageRoute(builder: (context) => MyHomePage()));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius:
+                    BorderRadius.all(Radius.circular(15.0))),
+                color: Color(hexColor('#0E49B5')),
+                textColor: Colors.white,
+                child: Text('완료',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: "Gmarket",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35)),
+              ),
+            ),
           ],
         ),
       ],
@@ -126,25 +136,6 @@ class F_goodjob extends StatelessWidget {
           ),
         ],
       )),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(0),
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-                //push를 눌렀을 때 edit로 넘어가
-                context,
-                CupertinoPageRoute(builder: (context) => MyHomePage()));
-          },
-          color: Color(hexColor('#0E49B5')),
-          textColor: Colors.white,
-          child: Text('완료',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  fontFamily: "Gmarket",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 45)),
-        ),
-      ),
     );
   }
 }
