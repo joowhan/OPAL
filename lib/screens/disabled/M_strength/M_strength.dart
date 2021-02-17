@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../Aerobic/Aerobic_updown.dart';
-import '../Aerobic/Aerobic_page.dart';
+import '../M_strength/M_page.dart';
 
 class mstrength extends StatefulWidget {
   @override
@@ -11,32 +10,6 @@ class mstrength extends StatefulWidget {
 class _mstrengthState extends State<mstrength> {
   @override
   Widget build(BuildContext context) {
-    var goodjob = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: <Widget>[
-        Column(
-          children: <Widget>[
-            Container(
-                padding: EdgeInsets.only(left: 20, top: 10),
-                margin: const EdgeInsets.all(10.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Text(
-                        '유산소',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                        textAlign: TextAlign.left
-                    ),
-                  ],
-                )
-            )
-          ],
-        ),
-      ],
-    );
-
     var time = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -417,41 +390,6 @@ class _mstrengthState extends State<mstrength> {
       ],
     );
 
-    // var complete = Column(
-    //   crossAxisAlignment: CrossAxisAlignment.start,
-    //   //mainAxisAlignment: MainAxisAlignment.center,
-    //   children: <Widget>[
-    //     Column(
-    //
-    //       children: <Widget>[
-    //         Container(
-    //           height: (MediaQuery.of(context).size.height -
-    //               MediaQuery.of(context).padding.top) * 0.1,
-    //           width: 450,
-    //           child: FlatButton(
-    //             onPressed: () {
-    //               Navigator.push(
-    //                 //push를 눌렀을 때 edit로 넘어가
-    //                   context,
-    //                   CupertinoPageRoute(builder: (context) => aerobic_page()));
-    //             },
-    //             shape: RoundedRectangleBorder(
-    //                 borderRadius: BorderRadius.all(Radius.circular(0.0))),
-    //             color: Colors.indigo[900],
-    //             splashColor: Colors.red,
-    //             textColor: Colors.white,
-    //             child: Text('시작하기',
-    //                 textAlign: TextAlign.left,
-    //                 style:
-    //                 TextStyle(fontWeight: FontWeight.bold, fontSize: 40)),
-    //           ),
-    //         ),
-    //       ],
-    //     ),
-    //   ],
-    // );
-
-
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.blue[900],
@@ -490,7 +428,7 @@ class _mstrengthState extends State<mstrength> {
             Navigator.push(
               //push를 눌렀을 때 edit로 넘어가
                 context,
-                CupertinoPageRoute(builder: (context) => aerobic_page()));
+                CupertinoPageRoute(builder: (context) => M_page()));
           },
           color: Colors.indigo[900],
           textColor: Colors.white,
