@@ -172,26 +172,6 @@ class _updownState extends State<updown> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    // Container( // 뒤로가기. 이 경우 리스트 화면을 간다.
-                    //   child:
-                    //   RaisedButton.icon(
-                    //     onPressed: () {
-                    //       Navigator.push(
-                    //           context,
-                    //           CupertinoPageRoute(builder: (context) => aerobic())); // 다시 리스트 화면으로 이동한다.
-                    //     },
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.all(Radius.circular(40.0))),
-                    //     color: Colors.white60,
-                    //     splashColor: Colors.blue,
-                    //     textColor: Colors.black45,
-                    //     label: Text('', // 글자를 추가할 경우가 있음 지우지 말것
-                    //         style:
-                    //         TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-                    //     icon: Icon(Icons.arrow_back_rounded,
-                    //         size: 55, color: Colors.black54),
-                    //   ),
-                    // ),
                     Container(
                       // 완료. 다음
                       height: 60,
@@ -324,7 +304,7 @@ class updownRest extends StatelessWidget {
                 ringColor: Colors.blue,
                 ringStroke: 10,
                 valueListener: (timeElapsed) {
-                  if (timeElapsed == Duration(minutes: 1))
+                  if (timeElapsed == Duration(seconds: 20))
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -340,6 +320,7 @@ class updownRest extends StatelessWidget {
                       CupertinoPageRoute(builder: (context) => SecondScreen()));
                   //Navigator.pushNamed(context, '/first');
                 },
+
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0))),
                 color: Colors.white60,
